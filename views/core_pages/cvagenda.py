@@ -13,24 +13,19 @@ def render():
                     # 右上角logo和文字
                     html.Div(
                         [
-                            html.Span(
-                                '之江实验室',
-                                style={
-                                    'color': '#333',
-                                    'fontSize': '18px',
-                                    'marginRight': '15px',
-                                    'fontWeight': 'bold',
-                                    'lineHeight': '80px',  # 与logo高度一致
-                                    'verticalAlign': 'middle'
-                                }
-                            ),
-                            html.Img(
-                                src='/assets/imgs/zjlab-logo.png',
-                                style={
-                                    'height': '80px',  # 保持logo比例
-                                    'objectFit': 'contain',
-                                    'verticalAlign': 'middle'
-                                }
+                            html.A(
+                                href='/core/cvhome',
+                                target='_self',
+                                children=[
+                                    html.Img(
+                                        src='/assets/imgs/zjlab-logo.png',
+                                        style={
+                                            'height': '100px',  # 保持logo比例
+                                            'objectFit': 'contain',
+                                            'verticalAlign': 'middle'
+                                        }
+                                    )
+                                ]
                             )
                         ],
                         style={
@@ -85,40 +80,52 @@ def render():
                                     # 提纲条目列表
                                     html.Div(
                                         [
-                                            html.P(
+                                            html.A(
                                                 '一、基本情况介绍',
+                                                href='/core/cvinfo',
+                                                target='_self',
                                                 style={
                                                     'fontSize': '28px',
                                                     'color': '#333',
                                                     'margin': '0 0 40px 0',
-                                                    'fontFamily': '仿宋_GB2312, serif'
+                                                    'fontFamily': '仿宋_GB2312, serif',
+                                                    'textDecoration': 'none'  # 可根据需要保留或去除下划线
                                                 }
                                             ),
-                                            html.P(
+                                            html.A(
                                                 '二、主要工作业绩',
+                                                href='/core/cvwork',
+                                                target='_self',
                                                 style={
                                                     'fontSize': '28px',
                                                     'color': '#333',
                                                     'margin': '0 0 40px 0',
-                                                    'fontFamily': '仿宋_GB2312, serif'
+                                                    'fontFamily': '仿宋_GB2312, serif',
+                                                    'textDecoration': 'none'
                                                 }
                                             ),
-                                            html.P(
+                                            html.A(
                                                 '三、个人优势',
+                                                href='/core/cvcharact',
+                                                target='_self',
                                                 style={
                                                     'fontSize': '28px',
                                                     'color': '#333',
                                                     'margin': '0 0 40px 0',
-                                                    'fontFamily': '仿宋_GB2312, serif'
+                                                    'fontFamily': '仿宋_GB2312, serif',
+                                                    'textDecoration': 'none'
                                                 }
                                             ),
-                                            html.P(
+                                            html.A(
                                                 '四、未来工作规划',
+                                                href='/core/cvplan',
+                                                target='_self',
                                                 style={
                                                     'fontSize': '28px',
                                                     'color': '#333',
                                                     'margin': '0',
-                                                    'fontFamily': '仿宋_GB2312, serif'
+                                                    'fontFamily': '仿宋_GB2312, serif',
+                                                    'textDecoration': 'none'
                                                 }
                                             )
                                         ],

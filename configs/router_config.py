@@ -97,22 +97,64 @@ class RouterConfig:
                     },
                 },
                 # 添加简历菜单项
-                {"component": "Item",
-                 "props": {
-                     "title": "简历",
-                     "key": "/core/cvhome",
-                     "icon": "antd-file-text",
-                     "href": "/core/cvhome",
-                 },
+                {
+                    "component": "Item",
+                    "props": {
+                        "title": "简历",
+                        "key": "/core/cvhome",
+                        "icon": "antd-file-text",
+                        "href": "/core/cvhome",
+                    },
                 },
                 # 添加Agenda菜单项
-                {"component": "Item",
-                 "props": {
-                     "title": "Agenda",
-                     "key": "/core/cvagenda",
-                     "icon": "antd-calendar",
-                     "href": "/core/cvagenda",
-                 },
+                {
+                    "component": "Item",
+                    "props": {
+                        "title": "Agenda",
+                        "key": "/core/cvagenda",
+                        "icon": "antd-calendar",
+                        "href": "/core/cvagenda",
+                    },
+                },
+                # 添加基本情况介绍菜单项
+                {
+                    "component": "Item",
+                    "props": {
+                        "title": "基本情况介绍",
+                        "key": "/core/cvinfo",
+                        "icon": "antd-info-circle",
+                        "href": "/core/cvinfo",
+                    },
+                },
+                # 添加主要工作业绩菜单项
+                {
+                    "component": "Item",
+                    "props": {
+                        "title": "主要工作业绩",
+                        "key": "/core/cvwork",
+                        "icon": "antd-trophy",
+                        "href": "/core/cvwork",
+                    },
+                },
+                # 添加个人特征菜单项
+                {
+                    "component": "Item",
+                    "props": {
+                        "title": "个人特征",
+                        "key": "/core/cvcharact",
+                        "icon": "antd-user",
+                        "href": "/core/cvcharact",
+                    },
+                },
+                # 添加工作规划菜单项
+                {
+                    "component": "Item",
+                    "props": {
+                        "title": "工作规划",
+                        "key": "/core/cvplan",
+                        "icon": "antd-plan",
+                        "href": "/core/cvplan",
+                    },
                 },
             ],
         },
@@ -159,6 +201,10 @@ class RouterConfig:
         "/core/independent-page/demo": "独立页面演示示例",
         "/core/cvhome": "简历",
         "/core/cvagenda": "Agenda",
+        "/core/cvinfo": "基本情况介绍",
+        "/core/cvwork": "主要工作业绩",
+        "/core/cvcharact": "个人特征",
+        "/core/cvplan": "工作规划",
         # 独立通配渲染页面
         wildcard_patterns["独立通配页面演示"]: "独立通配页面演示示例",
     }
@@ -168,6 +214,10 @@ class RouterConfig:
         "/core/independent-page/demo",
         "/core/cvhome",
         "/core/cvagenda",
+        "/core/cvinfo",
+        "/core/cvwork",        # 添加这一行
+        "/core/cvcharact",      # 添加这一行
+        "/core/cvplan",         # 添加这一行
         wildcard_patterns["独立通配页面演示"],
     ]
 

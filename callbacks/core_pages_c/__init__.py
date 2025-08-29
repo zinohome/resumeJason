@@ -15,7 +15,9 @@ from views.core_pages import (
     independent_page,
     independent_wildcard_page,
     url_params_page,
-    cvhome  # 添加cvhome模块导入
+    cvhome,
+    cvagenda,
+    cvinfo, cvwork, cvcharact, cvplan,  # <-- 新增此行
 )
 
 # 路由配置参数
@@ -161,6 +163,31 @@ def core_router(
     elif pathname == "/core/cvhome":
         # 更新页面返回内容
         page_content = cvhome.render()
+
+    # 添加cvagenda页面处理逻辑
+    elif pathname == "/core/cvagenda":
+        # 更新页面返回内容
+        page_content = cvagenda.render()
+
+    # 添加cvinfo页面处理逻辑
+    elif pathname == "/core/cvinfo":
+        # 更新页面返回内容
+        page_content = cvinfo.render()
+
+    # 添加cvwork页面处理逻辑
+    elif pathname == "/core/cvwork":
+        # 更新页面返回内容
+        page_content = cvwork.render()
+
+    # 添加cvcharact页面处理逻辑
+    elif pathname == "/core/cvcharact":
+        # 更新页面返回内容
+        page_content = cvcharact.render()
+
+    # 添加cvplan页面处理逻辑
+    elif pathname == "/core/cvplan":
+        # 更新页面返回内容
+        page_content = cvplan.render()
 
     # 多标签页形式
     if page_config.get("core_layout_type") == "tabs":

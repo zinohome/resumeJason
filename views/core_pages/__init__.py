@@ -6,7 +6,9 @@ from feffery_dash_utils.style_utils import style
 
 from components import core_side_menu
 from configs import BaseConfig, RouterConfig, LayoutConfig
-from views.core_pages import independent_page_demo, independent_wildcard_page_demo, cvhome, cvagenda
+from views.core_pages import independent_page_demo, independent_wildcard_page_demo, cvhome, cvagenda, cvinfo, cvcharact, \
+    cvplan
+from views.core_pages import cvwork
 
 # 令绑定的回调函数子模块生效
 import callbacks.core_pages_c  # noqa: F401
@@ -46,13 +48,20 @@ def render(current_pathname: str = None):
 
     # 判断是否需要独立渲染
     if current_pathname in RouterConfig.independent_core_pathnames:
-        # 返回不同地址规则对应页面内容
         if current_pathname == "/core/independent-page/demo":
             return independent_page_demo.render()
         elif current_pathname == "/core/cvhome":
             return cvhome.render()
         elif current_pathname == "/core/cvagenda":
             return cvagenda.render()
+        elif current_pathname == "/core/cvinfo":
+            return cvinfo.render()
+        elif current_pathname == "/core/cvwork":
+            return cvwork.render()
+        elif current_pathname == "/core/cvcharact":
+            return cvcharact.render()
+        elif current_pathname == "/core/cvplan":
+            return cvplan.render()
 
     # 判断是否需要独立通配渲染
     elif any(
