@@ -12,6 +12,14 @@
     font-style: normal;
 }
 
+/* 嵌入仿宋_GB2312字体 */
+@font-face {
+    font-family: '仿宋_GB2312';
+    src: url('/assets/fonts/fzxbs.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* 自定义应用初始化加载动画效果 */
 ._dash-loading {
     color: transparent;

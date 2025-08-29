@@ -1,4 +1,4 @@
-from dash import html
+from dash import html, dcc, callback, Input, Output, State, no_update
 import feffery_utils_components as fuc
 
 
@@ -46,7 +46,7 @@ def render():
                         }
                     ),
                     # 底部区域 - 约占1/3高度
-                    html.Div(
+                    html.A(
                         [
                             html.Div(
                                 [
@@ -56,7 +56,7 @@ def render():
                                         style={
                                             'height': '200px'
                                         }
-                                    ),
+                                    )
                                 ],
                                 style={
                                     'display': 'flex',
@@ -66,13 +66,14 @@ def render():
                                 }
                             )
                         ],
+                        href='/core/cvagenda',
                         style={
-                            'backgroundColor': 'white',
                             'width': '100%',
-                            'height': '34%',  # 占整体高度的1/3
-                            'display': 'flex',
-                            'flexDirection': 'column',
-                            'justifyContent': 'center'
+                            'height': '34%',
+                            'display': 'block',
+                            'backgroundColor': 'white',
+                            'cursor': 'pointer',
+                            'textDecoration': 'none'
                         }
                     )
                 ],
@@ -86,7 +87,15 @@ def render():
                     'display': 'flex',
                     'flexDirection': 'column'
                 }
-            )
+            ),
+            # 添加一个用于重定向的隐藏组件
+            html.Button(id='redirect-trigger', style={'display': 'none'}),
+            # JavaScript代码用于执行页面跳转
+            html.Script(id='redirect-script', children="""
+                document.getElementById('bottom-area').addEventListener('click', function() {
+                    window.location.href = '/core/cvagenda';
+                });
+            """)
         ],
         # 整体页面样式
         style={
@@ -101,3 +110,13 @@ def render():
             'justifyContent': 'center'
         }
     )
+
+
+# 添加回调函数确保组件正常加载
+@callback(
+    Output('redirect-script', 'children'),
+    Input('redirect-trigger', 'n_clicks'),
+    prevent_initial_call=True
+)
+def dummy_callback(n_clicks):
+    return no_update

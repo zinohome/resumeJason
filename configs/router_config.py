@@ -105,6 +105,15 @@ class RouterConfig:
                      "href": "/core/cvhome",
                  },
                 },
+                # 添加Agenda菜单项
+                {"component": "Item",
+                 "props": {
+                     "title": "Agenda",
+                     "key": "/core/cvagenda",
+                     "icon": "antd-calendar",
+                     "href": "/core/cvagenda",
+                 },
+                },
             ],
         },
         {
@@ -149,6 +158,7 @@ class RouterConfig:
         # 独立渲染页面
         "/core/independent-page/demo": "独立页面演示示例",
         "/core/cvhome": "简历",
+        "/core/cvagenda": "Agenda",
         # 独立通配渲染页面
         wildcard_patterns["独立通配页面演示"]: "独立通配页面演示示例",
     }
@@ -157,6 +167,7 @@ class RouterConfig:
     independent_core_pathnames: List[Union[str, re.Pattern]] = [
         "/core/independent-page/demo",
         "/core/cvhome",
+        "/core/cvagenda",
         wildcard_patterns["独立通配页面演示"],
     ]
 
