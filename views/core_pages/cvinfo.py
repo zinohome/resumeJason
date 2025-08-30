@@ -190,7 +190,7 @@ def render_left_section():
                         ]
                     ),
                     html.P(
-                        '参与通信AI《AI时代的IT架构建设与智慧运维服务》白皮书撰写',
+                        '• 参与通信AI《AI时代的IT架构建设与智慧运维服务》白皮书撰写',
                         style={
                             'fontFamily': 'Microsoft YaHei',
                             'fontSize': '14px',
@@ -200,7 +200,17 @@ def render_left_section():
                         }
                     ),
                     html.P(
-                        'TOGAF、COBIT、企业数据治理专家、PMP',
+                        '• 参与金融行业国产化平台建设相关标准撰写',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'lineHeight': '1.6',
+                            'margin': '0 0 5px 0',
+                            'color': '#333'
+                        }
+                    ),
+                    html.P(
+                        '• TOGAF、COBIT、企业数据治理专家、PMP',
                         style={
                             'fontFamily': 'Microsoft YaHei',
                             'fontSize': '14px',
@@ -224,10 +234,10 @@ def render_right_section():
             'flexDirection': 'column'
         },
         children=[
-            # 自我评价
+            # 自我评价 - 向上移动，减小底部边距
             html.Div(
                 style={
-                    'marginBottom': '30px',
+                    'marginBottom': '15px',  # 从30px减小到15px
                     'padding': '15px',
                     'backgroundColor': '#f8f8f8',
                     'borderRadius': '5px'
@@ -258,7 +268,7 @@ def render_right_section():
                         ]
                     ),
                     html.P(
-                        'IBM Band9 IT技术咨询专家，具备20年以上大客户及大型平台架构规划设计、实施交付、运营运维经验。',
+                        '• IBM Band9 IT技术咨询专家，具备20年以上大客户及大型平台架构规划设计、实施交付、运营运维经验。',
                         style={
                             'fontFamily': 'Microsoft YaHei',
                             'fontSize': '14px',
@@ -268,7 +278,7 @@ def render_right_section():
                         }
                     ),
                     html.P(
-                        '长期服务多重大型政企用户实施数字化创新升级，推动数字技术与业务的深度融合。',
+                        '• 长期服务多重大型政企用户实施数字化创新升级，推动数字技术与业务的深度融合。',
                         style={
                             'fontFamily': 'Microsoft YaHei',
                             'fontSize': '14px',
@@ -278,7 +288,7 @@ def render_right_section():
                         }
                     ),
                     html.P(
-                        '在大数据中心解决方案、混合云架构、容灾与业务连续性管理等领域深耕多年，聚焦把握大行业算力中心精准选建、自动化运维与基础设施优化，保障核心业务信息高效运行。',
+                        '• 在大数据中心解决方案、混合云架构、容灾与业务连续性管理等领域深耕多年，聚焦把握大行业算力中心精准选建、自动化运维与基础设施优化，保障核心业务信息高效运行。',
                         style={
                             'fontFamily': 'Microsoft YaHei',
                             'fontSize': '14px',
@@ -288,7 +298,7 @@ def render_right_section():
                         }
                     ),
                     html.P(
-                        '精通企业级大数据平台与数据运营管理，具备主流大模型及AI平台（如OpenAI、阿里云百炼等）企业集成及创新应用能力。',
+                        '• 精通企业级大数据平台与数据运营管理，具备主流大模型及AI平台（如OpenAI、阿里云百炼等）企业集成及创新应用能力。',
                         style={
                             'fontFamily': 'Microsoft YaHei',
                             'fontSize': '14px',
@@ -337,7 +347,7 @@ def render_right_section():
                         children=[
                             # 工作经历条目1
                             html.Div(
-                                style={'marginBottom': '25px'},
+                                style={'marginBottom': '30px'},  # 增加间距到30px
                                 children=[
                                     # 时间节点
                                     html.Div(
@@ -352,19 +362,19 @@ def render_right_section():
                                             'zIndex': '2'
                                         }
                                     ),
-                                    # 连接线
+                                    # 连接线 - 调整高度以覆盖所有条目
                                     html.Div(
                                         style={
                                             'position': 'absolute',
                                             'left': '5px',
                                             'top': '17px',
                                             'width': '2px',
-                                            'height': '260px',  # 调整高度以覆盖所有5个条目
+                                            'height': '380px',  # 增加高度到380px以确保足够空间
                                             'backgroundColor': '#ddd'
                                         }
                                     ),
                                     html.P(
-                                        '2021.11至今 某公司 IT架构总监',
+                                        '2021.11至今 IBM IT Management Consultant',
                                         style={
                                             'fontFamily': 'Microsoft YaHei',
                                             'fontSize': '16px',
@@ -374,26 +384,27 @@ def render_right_section():
                                         }
                                     ),
                                     html.P(
-                                        '负责公司整体IT战略规划与实施，推动数字化转型，管理IT架构团队。',
+                                        '• 主导大型客户的数字化转型、开源治理与混合云平台架构设计咨询; 协助建设混合云平台与AI知识库，实现数字化战略目标。',
                                         style={
                                             'fontFamily': 'Microsoft YaHei',
                                             'fontSize': '14px',
                                             'margin': '0',
-                                            'color': '#666'
+                                            'color': '#666',
+                                            'whiteSpace': 'pre-line'
                                         }
                                     )
                                 ]
                             ),
                             # 工作经历条目2
                             html.Div(
-                                style={'marginBottom': '25px'},
+                                style={'marginBottom': '30px'},  # 增加间距到30px
                                 children=[
-                                    # 时间节点
+                                    # 时间节点 - 调整位置
                                     html.Div(
                                         style={
                                             'position': 'absolute',
                                             'left': '0',
-                                            'top': '75px',
+                                            'top': '90px',  # 从75px调整到90px
                                             'width': '12px',
                                             'height': '12px',
                                             'borderRadius': '50%',
@@ -402,7 +413,7 @@ def render_right_section():
                                         }
                                     ),
                                     html.P(
-                                        '2015.3-2021.10 某科技公司 高级架构师',
+                                        '2020.6-2021.7 卡奥斯工业互联网平台 数据运营总监',
                                         style={
                                             'fontFamily': 'Microsoft YaHei',
                                             'fontSize': '16px',
@@ -412,26 +423,27 @@ def render_right_section():
                                         }
                                     ),
                                     html.P(
-                                        '负责大型云计算平台架构设计与优化，推动微服务转型。',
+                                        '• 承接工业互联网大数据战略，打造高质量数据整合、数据分析及增值应用体系；发布并维护企业数据治理与数据资产管理标准。',
                                         style={
                                             'fontFamily': 'Microsoft YaHei',
                                             'fontSize': '14px',
                                             'margin': '0',
-                                            'color': '#666'
+                                            'color': '#666',
+                                            'whiteSpace': 'pre-line'
                                         }
                                     )
                                 ]
                             ),
                             # 工作经历条目3
                             html.Div(
-                                style={'marginBottom': '25px'},
+                                style={'marginBottom': '30px'},  # 增加间距到30px
                                 children=[
-                                    # 时间节点
+                                    # 时间节点 - 调整位置
                                     html.Div(
                                         style={
                                             'position': 'absolute',
                                             'left': '0',
-                                            'top': '145px',
+                                            'top': '175px',  # 从145px调整到175px
                                             'width': '12px',
                                             'height': '12px',
                                             'borderRadius': '50%',
@@ -440,7 +452,7 @@ def render_right_section():
                                         }
                                     ),
                                     html.P(
-                                        '2001.7-2015.2 英国某企业 技术经理',
+                                        '2017.6-2020.6 上汽乘用车 数据平台架构师&基础平台运维经理',
                                         style={
                                             'fontFamily': 'Microsoft YaHei',
                                             'fontSize': '16px',
@@ -450,26 +462,27 @@ def render_right_section():
                                         }
                                     ),
                                     html.P(
-                                        '负责企业应用系统规划、设计与实施，管理技术团队。',
+                                        '• 主导跨三地大数据平台融合建设，实现 “业务、基础设施、数据容灾一体化”，提升数据利用率；主导数据平台治理体系建设、容灾演练与应急机制实施',
                                         style={
                                             'fontFamily': 'Microsoft YaHei',
                                             'fontSize': '14px',
                                             'margin': '0',
-                                            'color': '#666'
+                                            'color': '#666',
+                                            'whiteSpace': 'pre-line'
                                         }
                                     )
                                 ]
                             ),
                             # 工作经历条目4
                             html.Div(
-                                style={'marginBottom': '25px'},
+                                style={'marginBottom': '30px'},  # 增加间距到30px
                                 children=[
-                                    # 时间节点
+                                    # 时间节点 - 调整位置
                                     html.Div(
                                         style={
                                             'position': 'absolute',
                                             'left': '0',
-                                            'top': '215px',
+                                            'top': '250px',  # 从215px调整到250px
                                             'width': '12px',
                                             'height': '12px',
                                             'borderRadius': '50%',
@@ -478,7 +491,7 @@ def render_right_section():
                                         }
                                     ),
                                     html.P(
-                                        '1998.8-2001.6 某软件公司 程序员',
+                                        '2008.1-2017.6 IBM 高级技术支持专家 - 解决方案架构师',
                                         style={
                                             'fontFamily': 'Microsoft YaHei',
                                             'fontSize': '16px',
@@ -488,12 +501,13 @@ def render_right_section():
                                         }
                                     ),
                                     html.P(
-                                        '参与企业管理软件的开发与测试，编写技术文档。',
+                                        '• 负责多家银行、通信行业、国家部委的大型IT基础设施建设和7*24小时运维； \n• 负责大型行业客户IT解决方案架构及项目落地，实现端到端咨询、方案设计、交付和项目管理。',
                                         style={
                                             'fontFamily': 'Microsoft YaHei',
                                             'fontSize': '14px',
                                             'margin': '0',
-                                            'color': '#666'
+                                            'color': '#666',
+                                            'whiteSpace': 'pre-line'
                                         }
                                     )
                                 ]
@@ -501,12 +515,12 @@ def render_right_section():
                             # 工作经历条目5
                             html.Div(
                                 children=[
-                                    # 时间节点
+                                    # 时间节点 - 调整位置
                                     html.Div(
                                         style={
                                             'position': 'absolute',
                                             'left': '0',
-                                            'top': '285px',
+                                            'top': '325px',  # 从285px调整到325px
                                             'width': '12px',
                                             'height': '12px',
                                             'borderRadius': '50%',
@@ -515,7 +529,7 @@ def render_right_section():
                                         }
                                     ),
                                     html.P(
-                                        '1997.9-1998.7 某大学 助教',
+                                        '2001.7-2008.1 青岛市住房保障中心 高级软件工程师',
                                         style={
                                             'fontFamily': 'Microsoft YaHei',
                                             'fontSize': '16px',
@@ -525,12 +539,13 @@ def render_right_section():
                                         }
                                     ),
                                     html.P(
-                                        '协助教授进行教学工作，参与科研项目的数据处理。',
+                                        '• 负责青岛市住房保障业务核心流程管理平台、办公自动化平台的全流程（需求分析、系统设计、开发、上线、运维）建设与优化；',
                                         style={
                                             'fontFamily': 'Microsoft YaHei',
                                             'fontSize': '14px',
                                             'margin': '0',
-                                            'color': '#666'
+                                            'color': '#666',
+                                            'whiteSpace': 'pre-line'
                                         }
                                     )
                                 ]
@@ -611,7 +626,7 @@ def render():
                                 style={
                                     'display': 'flex',
                                     'alignItems': 'center',
-                                    'marginBottom': '80px'
+                                    'marginBottom': '5px'
                                 }
                             ),
                             

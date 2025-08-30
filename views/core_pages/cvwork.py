@@ -1,6 +1,6 @@
 from dash import html
 import feffery_utils_components as fuc
-import feffery_antd_components as fac  # 新增导入
+import feffery_antd_components as fac
 
 
 def render_header():
@@ -9,31 +9,31 @@ def render_header():
         [
             # 右上角logo
             html.Div(
-                [
-                    html.A(
-                        href='/core/cvagenda',
-                        target='_self',
-                        children=[
-                            html.Img(
-                                src='/assets/imgs/zjlab-logo.png',
-                                style={
-                                    'height': '100px',  # 保持logo比例
-                                    'objectFit': 'contain',
-                                    'verticalAlign': 'middle'
-                                }
+                        [
+                            html.A(
+                                href='/core/cvagenda',
+                                target='_self',
+                                children=[
+                                    html.Img(
+                                        src='/assets/imgs/zjlab-logo.png',
+                                        style={
+                                            'height': '100px',  # 保持logo比例
+                                            'objectFit': 'contain',
+                                            'verticalAlign': 'middle'
+                                        }
+                                    )
+                                ]
                             )
-                        ]
-                    )
-                ],
-                style={
-                    'position': 'absolute',
-                    'top': '20px',
-                    'right': '40px',
-                    'zIndex': '10',
-                    'display': 'flex',
-                    'alignItems': 'center'
-                }
-            ),
+                        ],
+                        style={
+                            'position': 'absolute',
+                            'top': '20px',
+                            'right': '40px',
+                            'zIndex': '10',
+                            'display': 'flex',
+                            'alignItems': 'center'
+                        }
+                    ),
             # 标题区域
             html.Div(
                 style={
@@ -69,144 +69,125 @@ def render_header():
     )
 
 
-def render_left_section():
-    """渲染左侧区域：照片、姓名、教育经历和证书"""
+# 新的四栏内容区域实现
+def render_development_section():
+    """渲染开发部分"""
     return html.Div(
         style={
-            'flex': '0.4',
+            'flex': '1',
+            'padding': '0 15px',
             'display': 'flex',
-            'flexDirection': 'column',
-            'alignItems': 'center'
+            'flexDirection': 'column'
         },
         children=[
-            # 照片区域
+            # 标题区域
             html.Div(
                 style={
-                    'width': '180px',
-                    'height': '180px',
-                    'borderRadius': '50%',
-                    'overflow': 'hidden',
-                    'marginBottom': '20px',
-                    'border': '2px solid #ddd'
+                    'display': 'flex',
+                    'alignItems': 'center',
+                    'marginBottom': '15px',
+                    'borderBottom': '2px solid #e0e0e0',
+                    'paddingBottom': '10px'
                 },
+                children=[
+                    # 图标
+                    fac.AntdIcon(
+                        icon='pi-buildings',
+                        style={'width': '40px', 'height': '40px', 'marginRight': '5px', 'color': '#1890ff'}
+                    ),
+                    html.H3(
+                        '开发',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '18px',
+                            'color': '#333',
+                            'margin': '0',
+                            'display': 'flex',
+                            'alignItems': 'center',
+                            'height': '40px'
+                        }
+                    )
+                ]
+            ),
+            # 内容区域
+            html.Div(
+                style={'marginBottom': '20px'},
+                children=[
+                    html.P(
+                        '主要开发语言：Java、Python',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 10px 0',
+                            'color': '#333'
+                        }
+                    ),
+                    html.P(
+                        '当前在用：',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#333'
+                        }
+                    ),
+                    html.P(
+                        '• 基于产品的定制：2 套：某部委、某运动品牌；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#666'
+                        }
+                    ),
+                    html.P(
+                        '• 平台类：3 套（大数据平台、开源治理平台、自动化运维平台）：政府、车企、多家银行；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#666'
+                        }
+                    ),
+                    html.P(
+                        '• 内部使用：6套：资产平台、运维专家系统、内部运营平台；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#666'
+                        }
+                    ),
+                    html.P(
+                        '• IOT、AI类：3套：交通、医疗、云企业；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0',
+                            'color': '#666'
+                        }
+                    )
+                ]
+            ),
+            # 图片区域
+            html.Div(
                 children=[
                     html.Img(
-                        src='/assets/imgs/zhangjun.png',  # 使用参考图片中显示的正确路径
-                        style={'width': '100%', 'height': '100%', 'objectFit': 'cover'}
-                    )
-                ]
-            ),
-            # 姓名
-            html.H2(
-                '张俊',
-                style={
-                    'fontFamily': 'Microsoft YaHei',
-                    'fontSize': '24px',
-                    'color': '#1a365d',
-                    'margin': '0 0 30px 0'
-                }
-            ),
-            # 教育经历
-            html.Div(
-                style={
-                    'width': '100%',
-                    'marginBottom': '30px'
-                },
-                children=[
-                    html.Div(
+                        src='/assets/imgs/develop1.png',
                         style={
-                            'display': 'flex',
-                            'alignItems': 'center',
-                            'marginBottom': '15px',
-                            'borderBottom': '2px solid #e0e0e0',
-                            'paddingBottom': '10px'
-                        },
-                        children=[
-                            # 替换为AntdIcon
-                            fac.AntdIcon(
-                                icon='md-layers',
-                                style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#1890ff'}
-                            ),
-                            html.H3(
-                                '教育经历',
-                                style={
-                                    'fontFamily': 'Microsoft YaHei',
-                                    'fontSize': '18px',
-                                    'color': '#333',
-                                    'margin': '0'
-                                }
-                            )
-                        ]
-                    ),
-                    html.P(
-                        '1997.9-2001.7 青岛建筑工程学院',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '16px',
-                            'lineHeight': '1.6',
-                            'margin': '0 0 5px 0',
-                            'color': '#333'
+                            'width': '100%',
+                            'height': 'auto',
+                            'marginBottom': '10px',
+                            'border': '1px solid #ddd'
                         }
                     ),
-                    html.P(
-                        '统计学 | 本科',
+                    # 注意：develop2可能是一个文件夹，这里使用占位图
+                    html.Img(
+                        src='/assets/imgs/develop2.png',
                         style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '16px',
-                            'lineHeight': '1.6',
-                            'margin': '0',
-                            'color': '#666'
-                        }
-                    )
-                ]
-            ),
-            # 证书
-            html.Div(
-                style={'width': '100%'},
-                children=[
-                    html.Div(
-                        style={
-                            'display': 'flex',
-                            'alignItems': 'center',
-                            'marginBottom': '15px',
-                            'borderBottom': '2px solid #e0e0e0',
-                            'paddingBottom': '10px'
-                        },
-                        children=[
-                            # 替换为AntdIcon
-                            fac.AntdIcon(
-                                icon='md-extension',
-                                style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#52c41a'}
-                            ),
-                            html.H3(
-                                '证书',
-                                style={
-                                    'fontFamily': 'Microsoft YaHei',
-                                    'fontSize': '18px',
-                                    'color': '#333',
-                                    'margin': '0'
-                                }
-                            )
-                        ]
-                    ),
-                    html.P(
-                        '参与通信AI《AI时代的IT架构建设与智慧运维服务》白皮书撰写',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '14px',
-                            'lineHeight': '1.6',
-                            'margin': '0 0 5px 0',
-                            'color': '#333'
-                        }
-                    ),
-                    html.P(
-                        'TOGAF、COBIT、企业数据治理专家、PMP',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '14px',
-                            'lineHeight': '1.6',
-                            'margin': '0',
-                            'color': '#666'
+                            'width': '100%',
+                            'height': 'auto',
+                            'border': '1px solid #ddd'
                         }
                     )
                 ]
@@ -215,337 +196,371 @@ def render_left_section():
     )
 
 
-def render_right_section():
-    """渲染右侧区域：自我评价和工作经历"""
+def render_maintenance_section():
+    """渲染运维部分"""
     return html.Div(
         style={
-            'flex': '0.6',
+            'flex': '1',
+            'padding': '0 15px',
             'display': 'flex',
             'flexDirection': 'column'
         },
         children=[
-            # 自我评价
+            # 标题区域
             html.Div(
                 style={
-                    'marginBottom': '30px',
-                    'padding': '15px',
-                    'backgroundColor': '#f8f8f8',
-                    'borderRadius': '5px'
+                    'display': 'flex',
+                    'alignItems': 'center',
+                    'marginBottom': '15px',
+                    'borderBottom': '2px solid #e0e0e0',
+                    'paddingBottom': '10px'
                 },
                 children=[
-                    html.Div(
-                        style={
-                            'display': 'flex',
-                            'alignItems': 'center',
-                            'marginBottom': '15px',
-                            'borderBottom': '2px solid #e0e0e0',  # 新增横线样式
-                            'paddingBottom': '10px'  # 新增底部内边距
-                        },
-                        children=[
-                            fac.AntdIcon(
-                                icon='md-pin-drop',
-                                style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#faad14'}
-                            ),
-                            html.H3(
-                                '自我评价',
-                                style={
-                                    'fontFamily': 'Microsoft YaHei',
-                                    'fontSize': '18px',
-                                    'color': '#333',
-                                    'margin': '0'
-                                }
-                            )
-                        ]
+                    # 图标
+                    fac.AntdIcon(
+                        icon='pi-buildings',
+                        style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#52c41a'}
                     ),
-                    html.P(
-                        'IBM Band9 IT技术咨询专家，具备20年以上大客户及大型平台架构规划设计、实施交付、运营运维经验。',
+                    html.H3(
+                        '运维',
                         style={
                             'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '14px',
-                            'lineHeight': '1.8',
-                            'margin': '0 0 10px 0',
-                            'color': '#333'
-                        }
-                    ),
-                    html.P(
-                        '长期服务多重大型政企用户实施数字化创新升级，推动数字技术与业务的深度融合。',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '14px',
-                            'lineHeight': '1.8',
-                            'margin': '0 0 10px 0',
-                            'color': '#333'
-                        }
-                    ),
-                    html.P(
-                        '在大数据中心解决方案、混合云架构、容灾与业务连续性管理等领域深耕多年，聚焦把握大行业算力中心精准选建、自动化运维与基础设施优化，保障核心业务信息高效运行。',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '14px',
-                            'lineHeight': '1.8',
-                            'margin': '0 0 10px 0',
-                            'color': '#333'
-                        }
-                    ),
-                    html.P(
-                        '精通企业级大数据平台与数据运营管理，具备主流大模型及AI平台（如OpenAI、阿里云百炼等）企业集成及创新应用能力。',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '14px',
-                            'lineHeight': '1.8',
-                            'margin': '0',
-                            'color': '#333'
+                            'fontSize': '18px',
+                            'color': '#333',
+                            'margin': '0'
                         }
                     )
                 ]
             ),
+            # 内容区域
             html.Div(
-                style={
-                    'marginTop': '-6px',  # 向上移动10px使其与教育经历横线对齐
-                    'marginBottom': '0',  # 确保没有额外的底部边距影响对齐
-                },
+                style={'marginBottom': '20px', 'minHeight': '200px'},
                 children=[
-                    html.Div(
+                    html.P(
+                        '主要负责：',
                         style={
-                            'display': 'flex',
-                            'alignItems': 'center',
-                            'marginBottom': '20px',
-                            'borderBottom': '2px solid #e0e0e0',
-                            'paddingBottom': '10px'
-                        },
-                        children=[
-                            fac.AntdIcon(
-                                icon='md-people',
-                                style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#f5222d'}
-                            ),
-                            html.H3(
-                                '工作经历',
-                                style={
-                                    'fontFamily': 'Microsoft YaHei',
-                                    'fontSize': '18px',
-                                    'color': '#333',
-                                    'margin': '0'
-                                }
-                            )
-                        ]
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#333'
+                        }
                     ),
-                    html.Div(
+                    html.P(
+                        '• 大型银行、通讯公司多年运维支持、迁移、灾备建设和系统架构优化；',
                         style={
-                            'position': 'relative',
-                            'paddingLeft': '30px'
-                        },
-                        children=[
-                            # 工作经历条目1
-                            html.Div(
-                                style={'marginBottom': '25px'},
-                                children=[
-                                    # 时间节点
-                                    html.Div(
-                                        style={
-                                            'position': 'absolute',
-                                            'left': '0',
-                                            'top': '5px',
-                                            'width': '12px',
-                                            'height': '12px',
-                                            'borderRadius': '50%',
-                                            'backgroundColor': '#e02020',
-                                            'zIndex': '2'
-                                        }
-                                    ),
-                                    # 连接线
-                                    html.Div(
-                                        style={
-                                            'position': 'absolute',
-                                            'left': '5px',
-                                            'top': '17px',
-                                            'width': '2px',
-                                            'height': '260px',  # 调整高度以覆盖所有5个条目
-                                            'backgroundColor': '#ddd'
-                                        }
-                                    ),
-                                    html.P(
-                                        '2021.11至今 某公司 IT架构总监',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '16px',
-                                            'fontWeight': 'bold',
-                                            'margin': '0 0 5px 0',
-                                            'color': '#333'
-                                        }
-                                    ),
-                                    html.P(
-                                        '负责公司整体IT战略规划与实施，推动数字化转型，管理IT架构团队。',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '14px',
-                                            'margin': '0',
-                                            'color': '#666'
-                                        }
-                                    )
-                                ]
-                            ),
-                            # 工作经历条目2
-                            html.Div(
-                                style={'marginBottom': '25px'},
-                                children=[
-                                    # 时间节点
-                                    html.Div(
-                                        style={
-                                            'position': 'absolute',
-                                            'left': '0',
-                                            'top': '75px',
-                                            'width': '12px',
-                                            'height': '12px',
-                                            'borderRadius': '50%',
-                                            'backgroundColor': '#e02020',
-                                            'zIndex': '2'
-                                        }
-                                    ),
-                                    html.P(
-                                        '2015.3-2021.10 某科技公司 高级架构师',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '16px',
-                                            'fontWeight': 'bold',
-                                            'margin': '0 0 5px 0',
-                                            'color': '#333'
-                                        }
-                                    ),
-                                    html.P(
-                                        '负责大型云计算平台架构设计与优化，推动微服务转型。',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '14px',
-                                            'margin': '0',
-                                            'color': '#666'
-                                        }
-                                    )
-                                ]
-                            ),
-                            # 工作经历条目3
-                            html.Div(
-                                style={'marginBottom': '25px'},
-                                children=[
-                                    # 时间节点
-                                    html.Div(
-                                        style={
-                                            'position': 'absolute',
-                                            'left': '0',
-                                            'top': '145px',
-                                            'width': '12px',
-                                            'height': '12px',
-                                            'borderRadius': '50%',
-                                            'backgroundColor': '#e02020',
-                                            'zIndex': '2'
-                                        }
-                                    ),
-                                    html.P(
-                                        '2001.7-2015.2 英国某企业 技术经理',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '16px',
-                                            'fontWeight': 'bold',
-                                            'margin': '0 0 5px 0',
-                                            'color': '#333'
-                                        }
-                                    ),
-                                    html.P(
-                                        '负责企业应用系统规划、设计与实施，管理技术团队。',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '14px',
-                                            'margin': '0',
-                                            'color': '#666'
-                                        }
-                                    )
-                                ]
-                            ),
-                            # 工作经历条目4
-                            html.Div(
-                                style={'marginBottom': '25px'},
-                                children=[
-                                    # 时间节点
-                                    html.Div(
-                                        style={
-                                            'position': 'absolute',
-                                            'left': '0',
-                                            'top': '215px',
-                                            'width': '12px',
-                                            'height': '12px',
-                                            'borderRadius': '50%',
-                                            'backgroundColor': '#e02020',
-                                            'zIndex': '2'
-                                        }
-                                    ),
-                                    html.P(
-                                        '1998.8-2001.6 某软件公司 程序员',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '16px',
-                                            'fontWeight': 'bold',
-                                            'margin': '0 0 5px 0',
-                                            'color': '#333'
-                                        }
-                                    ),
-                                    html.P(
-                                        '参与企业管理软件的开发与测试，编写技术文档。',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '14px',
-                                            'margin': '0',
-                                            'color': '#666'
-                                        }
-                                    )
-                                ]
-                            ),
-                            # 工作经历条目5
-                            html.Div(
-                                children=[
-                                    # 时间节点
-                                    html.Div(
-                                        style={
-                                            'position': 'absolute',
-                                            'left': '0',
-                                            'top': '285px',
-                                            'width': '12px',
-                                            'height': '12px',
-                                            'borderRadius': '50%',
-                                            'backgroundColor': '#e02020',
-                                            'zIndex': '2'
-                                        }
-                                    ),
-                                    html.P(
-                                        '1997.9-1998.7 某大学 助教',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '16px',
-                                            'fontWeight': 'bold',
-                                            'margin': '0 0 5px 0',
-                                            'color': '#333'
-                                        }
-                                    ),
-                                    html.P(
-                                        '协助教授进行教学工作，参与科研项目的数据处理。',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '14px',
-                                            'margin': '0',
-                                            'color': '#666'
-                                        }
-                                    )
-                                ]
-                            )
-                        ]
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#666'
+                        }
+                    ),
+                    html.P(
+                        '-- 重点事件：2010-2013年银行、保险、交管全国业务上收和大集中；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#666'
+                        }
+                    ),
+                    html.P(
+                        '• 混合云容器平台运维：某消费品头部客户；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#666'
+                        }
+                    ),
+                    html.P(
+                        '• 头部商业银行云平台及分布式核心系统运维体系设计；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0',
+                            'color': '#666'
+                        }
+                    )
+                ]
+            ),
+            # 图片区域
+            html.Div(
+                children=[
+                    html.Img(
+                        src='/assets/imgs/maintenance1.png',
+                        style={
+                            'width': '100%',
+                            'height': 'auto',
+                            'marginBottom': '10px',
+                            'border': '1px solid #ddd'
+                        }
+                    ),
+                    html.Img(
+                        src='/assets/imgs/maintenance2.png',
+                        style={
+                            'width': '100%',
+                            'height': 'auto',
+                            'border': '1px solid #ddd'
+                        }
                     )
                 ]
             )
+        ]
+    )
+
+
+def render_architecture_section():
+    """渲染架构部分"""
+    return html.Div(
+        style={
+            'flex': '1',
+            'padding': '0 15px',
+            'display': 'flex',
+            'flexDirection': 'column'
+        },
+        children=[
+            # 标题区域
+            html.Div(
+                style={
+                    'display': 'flex',
+                    'alignItems': 'center',
+                    'marginBottom': '15px',
+                    'borderBottom': '2px solid #e0e0e0',
+                    'paddingBottom': '10px'
+                },
+                children=[
+                    # 图标
+                    fac.AntdIcon(
+                        icon='pi-buildings',
+                        style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#faad14'}
+                    ),
+                    html.H3(
+                        '架构',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '18px',
+                            'color': '#333',
+                            'margin': '0'
+                        }
+                    )
+                ]
+            ),
+            # 内容区域
+            html.Div(
+                style={'marginBottom': '20px', 'minHeight': '200px'},
+                children=[
+                    html.P(
+                        '主导规划设计：',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#333'
+                        }
+                    ),
+                    html.P(
+                        '• 头部企业混合云大数据平台建设；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#666'
+                        }
+                    ),
+                    html.P(
+                        '• 工业互联网平台数据体系建设；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#666'
+                        }
+                    ),
+                    html.P(
+                        '• 金融行业客户多云平台架构及运维体系设计；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#666'
+                        }
+                    ),
+                    html.P(
+                        '• 多家两地三中心灾备体系设计；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0',
+                            'color': '#666'
+                        }
+                    )
+                ]
+            ),
+            # 图片区域
+            html.Div(
+                children=[
+                    html.Img(
+                        src='/assets/imgs/architect1.png',
+                        style={
+                            'width': '100%',
+                            'height': 'auto',
+                            'marginBottom': '10px',
+                            'border': '1px solid #ddd'
+                        }
+                    ),
+                    html.Img(
+                        src='/assets/imgs/architect2.png',
+                        style={
+                            'width': '100%',
+                            'height': 'auto',
+                            'border': '1px solid #ddd'
+                        }
+                    )
+                ]
+            )
+        ]
+    )
+
+
+def render_consulting_section():
+    """渲染咨询部分"""
+    return html.Div(
+        style={
+            'flex': '1',
+            'padding': '0 15px',
+            'display': 'flex',
+            'flexDirection': 'column'
+        },
+        children=[
+            # 标题区域
+            html.Div(
+                style={
+                    'display': 'flex',
+                    'alignItems': 'center',
+                    'marginBottom': '15px',
+                    'borderBottom': '2px solid #e0e0e0',
+                    'paddingBottom': '10px'
+                },
+                children=[
+                    # 图标
+                    fac.AntdIcon(
+                        icon='pi-buildings',
+                        style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#f5222d'}
+                    ),
+                    html.H3(
+                        '咨询',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '18px',
+                            'color': '#333',
+                            'margin': '0'
+                        }
+                    )
+                ]
+            ),
+            # 内容区域
+            html.Div(
+                style={'marginBottom': '20px', 'minHeight': '200px'},
+                children=[
+                    html.P(
+                        '主导规划设计：',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#333'
+                        }
+                    ),
+                    html.P(
+                        '• 头部企业混合云大数据平台建设；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#666'
+                        }
+                    ),
+                    html.P(
+                        '• 工业互联网平台数据体系建设；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#666'
+                        }
+                    ),
+                    html.P(
+                        '• 金融行业客户多云平台架构及运维体系设计；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0 0 5px 0',
+                            'color': '#666'
+                        }
+                    ),
+                    html.P(
+                        '• 多家两地三中心灾备体系设计；',
+                        style={
+                            'fontFamily': 'Microsoft YaHei',
+                            'fontSize': '14px',
+                            'margin': '0',
+                            'color': '#666'
+                        }
+                    )
+                ]
+            ),
+            # 图片区域
+            html.Div(
+                children=[
+                    html.Img(
+                        src='/assets/imgs/consultant1.png',
+                        style={
+                            'width': '100%',
+                            'height': 'auto',
+                            'marginBottom': '10px',
+                            'border': '1px solid #ddd'
+                        }
+                    ),
+                    html.Img(
+                        src='/assets/imgs/consultant2.png',
+                        style={
+                            'width': '100%',
+                            'height': 'auto',
+                            'border': '1px solid #ddd'
+                        }
+                    )
+                ]
+            )
+        ]
+    )
+
+
+def render_left_section():
+    """渲染左侧区域：空，因为我们要实现四栏布局"""
+    return html.Div()
+
+
+def render_right_section():
+    """渲染右侧区域：四栏内容布局"""
+    return html.Div(
+        style={
+            'width': '100%',
+            'display': 'flex',
+            'flexDirection': 'row',
+            'flexWrap': 'wrap'
+        },
+        children=[
+            render_development_section(),
+            render_maintenance_section(),
+            render_architecture_section(),
+            render_consulting_section()
         ]
     )
 
 
 def render():
     """子页面：简历信息页面 - 按照cvagenda.py的布局结构实现"""
-
+    
     return html.Div(
         [
             # 使用FefferyDiv作为内容区域容器，添加阴影效果
@@ -578,7 +593,7 @@ def render():
                             'alignItems': 'center'
                         }
                     ),
-
+                    
                     # 主内容区域 - 标题和内容
                     html.Div(
                         [
@@ -594,10 +609,10 @@ def render():
                                             'marginRight': '20px'
                                         }
                                     ),
-
-                                    # 标题
+                                    
+                                    # 标题 - 修改为'主要工作业绩'
                                     html.H1(
-                                        '基本情况介绍',
+                                        '主要工作业绩',
                                         style={
                                             'color': '#e02020',  # 红色标题
                                             'fontSize': '40px',
@@ -611,17 +626,17 @@ def render():
                                 style={
                                     'display': 'flex',
                                     'alignItems': 'center',
-                                    'marginBottom': '80px'
+                                    'marginBottom': '5px'
                                 }
                             ),
-
+                            
                             # 左侧和右侧内容区域
                             html.Div(
                                 [
                                     # 左侧区域
                                     render_left_section(),
-
-                                    # 右侧区域
+                                    
+                                    # 右侧区域 - 四栏布局
                                     render_right_section()
                                 ],
                                 style={
@@ -638,7 +653,7 @@ def render():
                             'padding': '60px 80px 40px 80px'  # 上下左右内边距
                         }
                     ),
-
+                    
                     # 底部彩色条纹
                     html.Div(
                         style={

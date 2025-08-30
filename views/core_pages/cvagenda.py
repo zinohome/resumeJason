@@ -172,7 +172,7 @@ def render():
                             'padding': '60px 80px 40px 80px'  # 上下左右内边距
                         }
                     ),
-                    
+
                     # 底部彩色条纹
                     html.Div(
                         style={
@@ -181,7 +181,7 @@ def render():
                             'left': '0',
                             'width': '100%',
                             'height': '8px',
-                            'background': 'linear-gradient(90deg, #1a365d 0%, #1a365d 33%, #2a9d8f 33%, #2a9d8f 66%, #e9c46a 66%, #e9c46a 100%)'
+                            'background': 'linear-gradient(90deg, #1a365d 0%, #1a365d 11.1%, #1a365d 11.1%, #1a465d 22.2%, #1a565d 22.2%, #1a565d 33.3%, #1a665d 33.3%, #1a665d 44.4%, #1a765d 44.4%, #1a765d 55.5%, #1a865d 55.5%, #1a865d 66.6%, #1a965d 66.6%, #1a965d 77.7%, #1aa65d 77.7%, #1aa65d 100%)'
                         }
                     )
                 ],
