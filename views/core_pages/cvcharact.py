@@ -78,13 +78,13 @@ def render():
                             html.Div(
                                 style={
                                     'width': '100%',
-                                    'height': '600px',  # 固定高度以容纳圆形布局
+                                    'height': '500px',  # 固定高度以容纳圆形布局
                                     'display': 'flex',
                                     'alignItems': 'center',
                                     'justifyContent': 'center',
                                     'position': 'relative',
                                     #'backgroundColor': 'white',
-                                    'padding': '40px'
+                                    'padding': '30px'
                                 },
                                 children=[
                                     # 中央核心能力区域（多层背景图）
@@ -153,7 +153,7 @@ def render():
                                     html.Div(
                                         style={
                                             'position': 'absolute',
-                                            'left': '15%',
+                                            'left': '13%',
                                             'top': '25%',  # 调整垂直位置使其落在弧形线上
                                             'zIndex': '8'
                                         },
@@ -233,7 +233,7 @@ def render():
                                     html.Div(
                                         style={
                                             'position': 'absolute',
-                                            'left': '15%',
+                                            'left': '13%',
                                             'bottom': '25%',  # 调整垂直位置使其落在弧形线上
                                             'zIndex': '8'
                                         },
@@ -313,7 +313,7 @@ def render():
                                     html.Div(
                                         style={
                                             'position': 'absolute',
-                                            'right': '15%',
+                                            'right': '13%',
                                             'top': '25%',  # 调整垂直位置使其落在弧形线上
                                             'zIndex': '8'
                                         },
@@ -395,7 +395,7 @@ def render():
                                     html.Div(
                                         style={
                                             'position': 'absolute',
-                                            'right': '15%',
+                                            'right': '13%',
                                             'bottom': '25%',  # 调整垂直位置使其落在弧形线上
                                             'zIndex': '8'
                                         },
@@ -486,7 +486,7 @@ def render():
                     html.Div(
                         style={
                             'position': 'absolute',
-                            'bottom': '100px',  # 增加bottom值使图片整体向上移动，从20px改为100px
+                            'bottom': '20px',  # 增加bottom值使图片整体向上移动，从20px改为100px
                             'left': '160px',
                             'right': '80px',
                             'display': 'flex',
