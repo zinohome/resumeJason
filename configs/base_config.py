@@ -5,10 +5,10 @@ class BaseConfig:
     """应用基础配置参数"""
 
     # 应用基础标题
-    app_title: str = "Magic Dash"
+    app_title: str = "之江实验室面试汇报"
 
     # 应用版本
-    app_version: str = "0.4.1"
+    app_version: str = "0.1.5"
 
     # 浏览器最低版本限制规则
     min_browser_versions: List[dict] = [

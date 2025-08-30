@@ -2,547 +2,6 @@ from dash import html
 import feffery_utils_components as fuc
 import feffery_antd_components as fac  # 新增导入
 
-
-def render_header():
-    """渲染页面头部，包含标题和logo"""
-    return html.Div(
-        [
-            # 右上角logo
-            html.Div(
-                [
-                    html.A(
-                        href='/core/cvagenda',
-                        target='_self',
-                        children=[
-                            html.Img(
-                                src='/assets/imgs/zjlab-logo.png',
-                                style={
-                                    'height': '100px',  # 保持logo比例
-                                    'objectFit': 'contain',
-                                    'verticalAlign': 'middle'
-                                }
-                            )
-                        ]
-                    )
-                ],
-                style={
-                    'position': 'absolute',
-                    'top': '20px',
-                    'right': '40px',
-                    'zIndex': '10',
-                    'display': 'flex',
-                    'alignItems': 'center'
-                }
-            ),
-            # 标题区域
-            html.Div(
-                style={
-                    'display': 'flex',
-                    'alignItems': 'center',
-                    'marginBottom': '30px',
-                    'marginTop': '20px'
-                },
-                children=[
-                    html.Div(
-                        style={
-                            'width': '0',
-                            'height': '0',
-                            'borderLeft': '15px solid transparent',
-                            'borderRight': '15px solid transparent',
-                            'borderBottom': '26px solid #e02020',
-                            'marginRight': '15px'
-                        }
-                    ),
-                    html.H1(
-                        '基本情况介绍',
-                        style={
-                            'color': '#333',
-                            'fontSize': '24px',
-                            'fontWeight': 'bold',
-                            'margin': '0',
-                            'fontFamily': 'Microsoft YaHei'
-                        }
-                    )
-                ]
-            )
-        ]
-    )
-
-
-def render_left_section():
-    """渲染左侧区域：照片、姓名、教育经历和证书"""
-    return html.Div(
-        style={
-            'flex': '0.4',
-            'display': 'flex',
-            'flexDirection': 'column',
-            'alignItems': 'center'
-        },
-        children=[
-            # 照片区域
-            html.Div(
-                style={
-                    'width': '180px',
-                    'height': '180px',
-                    'borderRadius': '50%',
-                    'overflow': 'hidden',
-                    'marginBottom': '20px',
-                    'border': '2px solid #ddd'
-                },
-                children=[
-                    html.Img(
-                        src='/assets/imgs/zhangjun.png',  # 使用参考图片中显示的正确路径
-                        style={'width': '100%', 'height': '100%', 'objectFit': 'cover'}
-                    )
-                ]
-            ),
-            # 姓名
-            html.H2(
-                '张俊',
-                style={
-                    'fontFamily': 'Microsoft YaHei',
-                    'fontSize': '24px',
-                    'color': '#1a365d',
-                    'margin': '0 0 30px 0'
-                }
-            ),
-            # 教育经历
-            html.Div(
-                style={
-                    'width': '100%',
-                    'marginBottom': '30px'
-                },
-                children=[
-                    html.Div(
-                        style={
-                            'display': 'flex',
-                            'alignItems': 'center',
-                            'marginBottom': '15px',
-                            'borderBottom': '2px solid #e0e0e0',
-                            'paddingBottom': '10px'
-                        },
-                        children=[
-                            # 替换为AntdIcon
-                            fac.AntdIcon(
-                                icon='md-layers',
-                                style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#1890ff'}
-                            ),
-                            html.H3(
-                                '教育经历',
-                                style={
-                                    'fontFamily': 'Microsoft YaHei',
-                                    'fontSize': '18px',
-                                    'color': '#333',
-                                    'margin': '0'
-                                }
-                            )
-                        ]
-                    ),
-                    html.P(
-                        '1997.9-2001.7 青岛建筑工程学院',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '16px',
-                            'lineHeight': '1.6',
-                            'margin': '0 0 5px 0',
-                            'color': '#333'
-                        }
-                    ),
-                    html.P(
-                        '统计学 | 本科',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '16px',
-                            'lineHeight': '1.6',
-                            'margin': '0',
-                            'color': '#666'
-                        }
-                    )
-                ]
-            ),
-            # 证书
-            html.Div(
-                style={'width': '100%'},
-                children=[
-                    html.Div(
-                        style={
-                            'display': 'flex',
-                            'alignItems': 'center',
-                            'marginBottom': '15px',
-                            'borderBottom': '2px solid #e0e0e0',
-                            'paddingBottom': '10px'
-                        },
-                        children=[
-                            # 替换为AntdIcon
-                            fac.AntdIcon(
-                                icon='md-extension',
-                                style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#52c41a'}
-                            ),
-                            html.H3(
-                                '证书',
-                                style={
-                                    'fontFamily': 'Microsoft YaHei',
-                                    'fontSize': '18px',
-                                    'color': '#333',
-                                    'margin': '0'
-                                }
-                            )
-                        ]
-                    ),
-                    html.P(
-                        '参与通信AI《AI时代的IT架构建设与智慧运维服务》白皮书撰写',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '14px',
-                            'lineHeight': '1.6',
-                            'margin': '0 0 5px 0',
-                            'color': '#333'
-                        }
-                    ),
-                    html.P(
-                        'TOGAF、COBIT、企业数据治理专家、PMP',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '14px',
-                            'lineHeight': '1.6',
-                            'margin': '0',
-                            'color': '#666'
-                        }
-                    )
-                ]
-            )
-        ]
-    )
-
-
-def render_right_section():
-    """渲染右侧区域：自我评价和工作经历"""
-    return html.Div(
-        style={
-            'flex': '0.6',
-            'display': 'flex',
-            'flexDirection': 'column'
-        },
-        children=[
-            # 自我评价
-            html.Div(
-                style={
-                    'marginBottom': '30px',
-                    'padding': '15px',
-                    'backgroundColor': '#f8f8f8',
-                    'borderRadius': '5px'
-                },
-                children=[
-                    html.Div(
-                        style={
-                            'display': 'flex',
-                            'alignItems': 'center',
-                            'marginBottom': '15px',
-                            'borderBottom': '2px solid #e0e0e0',  # 新增横线样式
-                            'paddingBottom': '10px'  # 新增底部内边距
-                        },
-                        children=[
-                            fac.AntdIcon(
-                                icon='md-pin-drop',
-                                style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#faad14'}
-                            ),
-                            html.H3(
-                                '自我评价',
-                                style={
-                                    'fontFamily': 'Microsoft YaHei',
-                                    'fontSize': '18px',
-                                    'color': '#333',
-                                    'margin': '0'
-                                }
-                            )
-                        ]
-                    ),
-                    html.P(
-                        'IBM Band9 IT技术咨询专家，具备20年以上大客户及大型平台架构规划设计、实施交付、运营运维经验。',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '14px',
-                            'lineHeight': '1.8',
-                            'margin': '0 0 10px 0',
-                            'color': '#333'
-                        }
-                    ),
-                    html.P(
-                        '长期服务多重大型政企用户实施数字化创新升级，推动数字技术与业务的深度融合。',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '14px',
-                            'lineHeight': '1.8',
-                            'margin': '0 0 10px 0',
-                            'color': '#333'
-                        }
-                    ),
-                    html.P(
-                        '在大数据中心解决方案、混合云架构、容灾与业务连续性管理等领域深耕多年，聚焦把握大行业算力中心精准选建、自动化运维与基础设施优化，保障核心业务信息高效运行。',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '14px',
-                            'lineHeight': '1.8',
-                            'margin': '0 0 10px 0',
-                            'color': '#333'
-                        }
-                    ),
-                    html.P(
-                        '精通企业级大数据平台与数据运营管理，具备主流大模型及AI平台（如OpenAI、阿里云百炼等）企业集成及创新应用能力。',
-                        style={
-                            'fontFamily': 'Microsoft YaHei',
-                            'fontSize': '14px',
-                            'lineHeight': '1.8',
-                            'margin': '0',
-                            'color': '#333'
-                        }
-                    )
-                ]
-            ),
-            html.Div(
-                style={
-                    'marginTop': '-6px',  # 向上移动10px使其与教育经历横线对齐
-                    'marginBottom': '0',  # 确保没有额外的底部边距影响对齐
-                },
-                children=[
-                    html.Div(
-                        style={
-                            'display': 'flex',
-                            'alignItems': 'center',
-                            'marginBottom': '20px',
-                            'borderBottom': '2px solid #e0e0e0',
-                            'paddingBottom': '10px'
-                        },
-                        children=[
-                            fac.AntdIcon(
-                                icon='md-people',
-                                style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#f5222d'}
-                            ),
-                            html.H3(
-                                '工作经历',
-                                style={
-                                    'fontFamily': 'Microsoft YaHei',
-                                    'fontSize': '18px',
-                                    'color': '#333',
-                                    'margin': '0'
-                                }
-                            )
-                        ]
-                    ),
-                    html.Div(
-                        style={
-                            'position': 'relative',
-                            'paddingLeft': '30px'
-                        },
-                        children=[
-                            # 工作经历条目1
-                            html.Div(
-                                style={'marginBottom': '25px'},
-                                children=[
-                                    # 时间节点
-                                    html.Div(
-                                        style={
-                                            'position': 'absolute',
-                                            'left': '0',
-                                            'top': '5px',
-                                            'width': '12px',
-                                            'height': '12px',
-                                            'borderRadius': '50%',
-                                            'backgroundColor': '#e02020',
-                                            'zIndex': '2'
-                                        }
-                                    ),
-                                    # 连接线
-                                    html.Div(
-                                        style={
-                                            'position': 'absolute',
-                                            'left': '5px',
-                                            'top': '17px',
-                                            'width': '2px',
-                                            'height': '260px',  # 调整高度以覆盖所有5个条目
-                                            'backgroundColor': '#ddd'
-                                        }
-                                    ),
-                                    html.P(
-                                        '2021.11至今 某公司 IT架构总监',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '16px',
-                                            'fontWeight': 'bold',
-                                            'margin': '0 0 5px 0',
-                                            'color': '#333'
-                                        }
-                                    ),
-                                    html.P(
-                                        '负责公司整体IT战略规划与实施，推动数字化转型，管理IT架构团队。',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '14px',
-                                            'margin': '0',
-                                            'color': '#666'
-                                        }
-                                    )
-                                ]
-                            ),
-                            # 工作经历条目2
-                            html.Div(
-                                style={'marginBottom': '25px'},
-                                children=[
-                                    # 时间节点
-                                    html.Div(
-                                        style={
-                                            'position': 'absolute',
-                                            'left': '0',
-                                            'top': '75px',
-                                            'width': '12px',
-                                            'height': '12px',
-                                            'borderRadius': '50%',
-                                            'backgroundColor': '#e02020',
-                                            'zIndex': '2'
-                                        }
-                                    ),
-                                    html.P(
-                                        '2015.3-2021.10 某科技公司 高级架构师',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '16px',
-                                            'fontWeight': 'bold',
-                                            'margin': '0 0 5px 0',
-                                            'color': '#333'
-                                        }
-                                    ),
-                                    html.P(
-                                        '负责大型云计算平台架构设计与优化，推动微服务转型。',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '14px',
-                                            'margin': '0',
-                                            'color': '#666'
-                                        }
-                                    )
-                                ]
-                            ),
-                            # 工作经历条目3
-                            html.Div(
-                                style={'marginBottom': '25px'},
-                                children=[
-                                    # 时间节点
-                                    html.Div(
-                                        style={
-                                            'position': 'absolute',
-                                            'left': '0',
-                                            'top': '145px',
-                                            'width': '12px',
-                                            'height': '12px',
-                                            'borderRadius': '50%',
-                                            'backgroundColor': '#e02020',
-                                            'zIndex': '2'
-                                        }
-                                    ),
-                                    html.P(
-                                        '2001.7-2015.2 英国某企业 技术经理',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '16px',
-                                            'fontWeight': 'bold',
-                                            'margin': '0 0 5px 0',
-                                            'color': '#333'
-                                        }
-                                    ),
-                                    html.P(
-                                        '负责企业应用系统规划、设计与实施，管理技术团队。',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '14px',
-                                            'margin': '0',
-                                            'color': '#666'
-                                        }
-                                    )
-                                ]
-                            ),
-                            # 工作经历条目4
-                            html.Div(
-                                style={'marginBottom': '25px'},
-                                children=[
-                                    # 时间节点
-                                    html.Div(
-                                        style={
-                                            'position': 'absolute',
-                                            'left': '0',
-                                            'top': '215px',
-                                            'width': '12px',
-                                            'height': '12px',
-                                            'borderRadius': '50%',
-                                            'backgroundColor': '#e02020',
-                                            'zIndex': '2'
-                                        }
-                                    ),
-                                    html.P(
-                                        '1998.8-2001.6 某软件公司 程序员',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '16px',
-                                            'fontWeight': 'bold',
-                                            'margin': '0 0 5px 0',
-                                            'color': '#333'
-                                        }
-                                    ),
-                                    html.P(
-                                        '参与企业管理软件的开发与测试，编写技术文档。',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '14px',
-                                            'margin': '0',
-                                            'color': '#666'
-                                        }
-                                    )
-                                ]
-                            ),
-                            # 工作经历条目5
-                            html.Div(
-                                children=[
-                                    # 时间节点
-                                    html.Div(
-                                        style={
-                                            'position': 'absolute',
-                                            'left': '0',
-                                            'top': '285px',
-                                            'width': '12px',
-                                            'height': '12px',
-                                            'borderRadius': '50%',
-                                            'backgroundColor': '#e02020',
-                                            'zIndex': '2'
-                                        }
-                                    ),
-                                    html.P(
-                                        '1997.9-1998.7 某大学 助教',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '16px',
-                                            'fontWeight': 'bold',
-                                            'margin': '0 0 5px 0',
-                                            'color': '#333'
-                                        }
-                                    ),
-                                    html.P(
-                                        '协助教授进行教学工作，参与科研项目的数据处理。',
-                                        style={
-                                            'fontFamily': 'Microsoft YaHei',
-                                            'fontSize': '14px',
-                                            'margin': '0',
-                                            'color': '#666'
-                                        }
-                                    )
-                                ]
-                            )
-                        ]
-                    )
-                ]
-            )
-        ]
-    )
-
-
 def render():
     """子页面：简历信息页面 - 按照cvagenda.py的布局结构实现"""
 
@@ -595,9 +54,9 @@ def render():
                                         }
                                     ),
 
-                                    # 标题
+                                    # 标题 - 修改为个人优势
                                     html.H1(
-                                        '基本情况介绍',
+                                        '个人优势',
                                         style={
                                             'color': '#e02020',  # 红色标题
                                             'fontSize': '40px',
@@ -611,32 +70,507 @@ def render():
                                 style={
                                     'display': 'flex',
                                     'alignItems': 'center',
-                                    'marginBottom': '80px'
+                                    'marginBottom': '40px'  # 减少标题下方留白，从80px改为40px
                                 }
                             ),
 
-                            # 左侧和右侧内容区域
+                            # 圆形布局内容区域
                             html.Div(
-                                [
-                                    # 左侧区域
-                                    render_left_section(),
-
-                                    # 右侧区域
-                                    render_right_section()
-                                ],
                                 style={
-                                    'display': 'flex',
-                                    'alignItems': 'flex-start',
                                     'width': '100%',
-                                    'paddingTop': '20px'
-                                }
+                                    'height': '600px',  # 固定高度以容纳圆形布局
+                                    'display': 'flex',
+                                    'alignItems': 'center',
+                                    'justifyContent': 'center',
+                                    'position': 'relative',
+                                    #'backgroundColor': 'white',
+                                    'padding': '40px'
+                                },
+                                children=[
+                                    # 中央核心能力区域（多层背景图）
+                                    html.Div(
+                                        style={
+                                            'position': 'absolute',
+                                            'width': '300px',
+                                            'height': '300px',
+                                            'display': 'flex',
+                                            'alignItems': 'center',
+                                            'justifyContent': 'center'
+                                        },
+                                        children=[
+                                            # 核心能力背景层1 - blue
+                                            html.Img(
+                                                src='/assets/imgs/core_skills_bg1.png',
+                                                style={
+                                                    'position': 'absolute',
+                                                    'width': '360px',
+                                                    'height': '360px',
+                                                    'zIndex': '1'
+                                                }
+                                            ),
+                                            # 核心能力内容图片
+                                            html.Img(
+                                                src='/assets/imgs/core_skills.png',
+                                                style={
+                                                    'position': 'absolute',
+                                                    'width': '200px',
+                                                    'height': '120px',
+                                                    'zIndex': '6'
+                                                }
+                                            )
+                                        ]
+                                    ),
+                                    
+                                    # 左侧弧形线条
+                                    html.Img(
+                                        src='/assets/imgs/arch_left.png',
+                                        style={
+                                            'position': 'absolute',
+                                            'left': '15%',
+                                            'top': '50%',
+                                            'transform': 'translateY(-50%)',
+                                            'width': '126px',
+                                            'height': '560px',
+                                            'zIndex': '7'
+                                        }
+                                    ),
+                                    
+                                    # 右侧弧形线条
+                                    html.Img(
+                                        src='/assets/imgs/arch_right.png',
+                                        style={
+                                            'position': 'absolute',
+                                            'right': '15%',
+                                            'top': '50%',
+                                            'transform': 'translateY(-50%)',
+                                            'width': '126px',
+                                            'height': '560px',
+                                            'zIndex': '7'
+                                        }
+                                    ),
+                                    
+                                    # 个人业务领域模块
+                                    html.Div(
+                                        style={
+                                            'position': 'absolute',
+                                            'left': '15%',
+                                            'top': '25%',  # 调整垂直位置使其落在弧形线上
+                                            'zIndex': '8'
+                                        },
+                                        children=[
+                                            # 图标和文字水平布局容器
+                                            html.Div(
+                                                style={
+                                                    'display': 'flex',
+                                                    'alignItems': 'center',
+                                                },
+                                                children=[
+                                                    # 图标容器
+                                                    html.Div(
+                                                        style={
+                                                            'position': 'relative',
+                                                            'marginRight': '15px',  # 图标与文字之间的间距
+                                                            'display': 'flex',
+                                                            'alignItems': 'center',
+                                                            'justifyContent': 'center'
+                                                        },
+                                                        children=[
+                                                            # 图标背景
+                                                            html.Img(
+                                                                src='/assets/imgs/ico_bg.png',
+                                                                style={'width': '80px', 'height': '80px'}
+                                                            ),
+                                                            # 图标
+                                                            html.Img(
+                                                                src='/assets/imgs/ico_person.png',
+                                                                style={
+                                                                    'position': 'absolute',
+                                                                    'width': '30px',
+                                                                    'height': '30px'
+                                                                }
+                                                            )
+                                                        ]
+                                                    ),
+                                                    # 文字内容容器
+                                                    html.Div(
+                                                        style={
+                                                            'display': 'flex',
+                                                            'flexDirection': 'column',
+                                                            'justifyContent': 'center',
+                                                            'minWidth': '200px'
+                                                        },
+                                                        children=[
+                                                            # 标题
+                                                            html.H3(
+                                                                '个人业务领域',
+                                                                style={
+                                                                    'fontFamily': 'Microsoft YaHei',
+                                                                    'fontSize': '16px',
+                                                                    'color': '#333',
+                                                                    'margin': '0 0 10px 0'
+                                                                }
+                                                            ),
+                                                            # 描述
+                                                            html.P(
+                                                                '长期服务于关键行业百万级用户和头部企业的核心生产系统运维',
+                                                                style={
+                                                                    'fontFamily': 'Microsoft YaHei',
+                                                                    'fontSize': '14px',
+                                                                    'color': '#666',
+                                                                    'margin': '0',
+                                                                    'textAlign': 'left',  # 文字左对齐
+                                                                    'width': '200px'
+                                                                }
+                                                            )
+                                                        ]
+                                                    )
+                                                ]
+                                            )
+                                        ]
+                                    ),
+                                    
+                                    # 专业技能模块
+                                    html.Div(
+                                        style={
+                                            'position': 'absolute',
+                                            'left': '15%',
+                                            'bottom': '25%',  # 调整垂直位置使其落在弧形线上
+                                            'zIndex': '8'
+                                        },
+                                        children=[
+                                            # 图标和文字水平布局容器
+                                            html.Div(
+                                                style={
+                                                    'display': 'flex',
+                                                    'alignItems': 'center',
+                                                },
+                                                children=[
+                                                    # 图标容器
+                                                    html.Div(
+                                                        style={
+                                                            'position': 'relative',
+                                                            'marginRight': '15px',  # 图标与文字之间的间距
+                                                            'display': 'flex',
+                                                            'alignItems': 'center',
+                                                            'justifyContent': 'center'
+                                                        },
+                                                        children=[
+                                                            # 图标背景
+                                                            html.Img(
+                                                                src='/assets/imgs/ico_bg.png',
+                                                                style={'width': '80px', 'height': '80px'}
+                                                            ),
+                                                            # 图标
+                                                            html.Img(
+                                                                src='/assets/imgs/ico_professonal.png',
+                                                                style={
+                                                                    'position': 'absolute',
+                                                                    'width': '30px',
+                                                                    'height': '30px'
+                                                                }
+                                                            )
+                                                        ]
+                                                    ),
+                                                    # 文字内容容器
+                                                    html.Div(
+                                                        style={
+                                                            'display': 'flex',
+                                                            'flexDirection': 'column',
+                                                            'justifyContent': 'center',
+                                                            'minWidth': '200px'
+                                                        },
+                                                        children=[
+                                                            # 标题
+                                                            html.H3(
+                                                                '专业技能',
+                                                                style={
+                                                                    'fontFamily': 'Microsoft YaHei',
+                                                                    'fontSize': '16px',
+                                                                    'color': '#333',
+                                                                    'margin': '0 0 10px 0'
+                                                                }
+                                                            ),
+                                                            # 描述
+                                                            html.P(
+                                                                '具备大规模数据中心的自动化运维、故障自愈与高可用保障实战能力',
+                                                                style={
+                                                                    'fontFamily': 'Microsoft YaHei',
+                                                                    'fontSize': '14px',
+                                                                    'color': '#666',
+                                                                    'margin': '0',
+                                                                    'textAlign': 'left',  # 文字左对齐
+                                                                    'width': '200px'
+                                                                }
+                                                            )
+                                                        ]
+                                                    )
+                                                ]
+                                            )
+                                        ]
+                                    ),
+                                    
+                                    # 综合素质模块
+                                    html.Div(
+                                        style={
+                                            'position': 'absolute',
+                                            'right': '15%',
+                                            'top': '25%',  # 调整垂直位置使其落在弧形线上
+                                            'zIndex': '8'
+                                        },
+                                        children=[
+                                            # 图标和文字水平布局容器
+                                            html.Div(
+                                                style={
+                                                    'display': 'flex',
+                                                    'alignItems': 'center',
+                                                    'flexDirection': 'row-reverse',  # 文字在左，图标在右
+                                                    'justifyContent': 'flex-end'
+                                                },
+                                                children=[
+                                                    # 图标容器
+                                                    html.Div(
+                                                        style={
+                                                            'position': 'relative',
+                                                            'marginLeft': '15px',  # 文字与图标之间的间距
+                                                            'display': 'flex',
+                                                            'alignItems': 'center',
+                                                            'justifyContent': 'center'
+                                                        },
+                                                        children=[
+                                                            # 图标背景
+                                                            html.Img(
+                                                                src='/assets/imgs/ico_bg.png',
+                                                                style={'width': '80px', 'height': '80px'}
+                                                            ),
+                                                            # 图标
+                                                            html.Img(
+                                                                src='/assets/imgs/ico_overall.png',
+                                                                style={
+                                                                    'position': 'absolute',
+                                                                    'width': '30px',
+                                                                    'height': '30px'
+                                                                }
+                                                            )
+                                                        ]
+                                                    ),
+                                                    # 文字内容容器
+                                                    html.Div(
+                                                        style={
+                                                            'display': 'flex',
+                                                            'flexDirection': 'column',
+                                                            'justifyContent': 'center',
+                                                            'minWidth': '200px'
+                                                        },
+                                                        children=[
+                                                            # 标题
+                                                            html.H3(
+                                                                '综合素质',
+                                                                style={
+                                                                    'fontFamily': 'Microsoft YaHei',
+                                                                    'fontSize': '16px',
+                                                                    'color': '#333',
+                                                                    'margin': '0 0 10px 0'
+                                                                }
+                                                            ),
+                                                            # 描述
+                                                            html.P(
+                                                                '具备良好的团队协作与项目统筹能力，应对突发事件高效冷静，协调多方资源达成目标',
+                                                                style={
+                                                                    'fontFamily': 'Microsoft YaHei',
+                                                                    'fontSize': '14px',
+                                                                    'color': '#666',
+                                                                    'margin': '0',
+                                                                    'textAlign': 'right',  # 文字右对齐
+                                                                    'width': '200px'
+                                                                }
+                                                            )
+                                                        ]
+                                                    )
+                                                ]
+                                            )
+                                        ]
+                                    ),
+                                    
+                                    # ABILITY MODULES
+                                    html.Div(
+                                        style={
+                                            'position': 'absolute',
+                                            'right': '15%',
+                                            'bottom': '25%',  # 调整垂直位置使其落在弧形线上
+                                            'zIndex': '8'
+                                        },
+                                        children=[
+                                            # 图标和文字水平布局容器
+                                            html.Div(
+                                                style={
+                                                    'display': 'flex',
+                                                    'alignItems': 'center',
+                                                    'flexDirection': 'row-reverse',  # 文字在左，图标在右
+                                                    'justifyContent': 'flex-end'
+                                                },
+                                                children=[
+                                                    # 图标容器
+                                                    html.Div(
+                                                        style={
+                                                            'position': 'relative',
+                                                            'marginLeft': '15px',  # 文字与图标之间的间距
+                                                            'display': 'flex',
+                                                            'alignItems': 'center',
+                                                            'justifyContent': 'center'
+                                                        },
+                                                        children=[
+                                                            # 图标背景
+                                                            html.Img(
+                                                                src='/assets/imgs/ico_bg.png',
+                                                                style={'width': '80px', 'height': '80px'}
+                                                            ),
+                                                            # 图标
+                                                            html.Img(
+                                                                src='/assets/imgs/ico_innovation.png',
+                                                                style={
+                                                                    'position': 'absolute',
+                                                                    'width': '30px',
+                                                                    'height': '30px'
+                                                                }
+                                                            )
+                                                        ]
+                                                    ),
+                                                    # 文字内容容器
+                                                    html.Div(
+                                                        style={
+                                                            'display': 'flex',
+                                                            'flexDirection': 'column',
+                                                            'justifyContent': 'center',
+                                                            'minWidth': '200px'
+                                                        },
+                                                        children=[
+                                                            # 标题
+                                                            html.H3(
+                                                                '创新能力',
+                                                                style={
+                                                                    'fontFamily': 'Microsoft YaHei',
+                                                                    'fontSize': '16px',
+                                                                    'color': '#333',
+                                                                    'margin': '0 0 10px 0'
+                                                                }
+                                                            ),
+                                                            # 描述
+                                                            html.P(
+                                                                '积极推动智能化运维平台和体系建设，持续优化流程与工具，不断提升运维效率与服务质量',
+                                                                style={
+                                                                    'fontFamily': 'Microsoft YaHei',
+                                                                    'fontSize': '14px',
+                                                                    'color': '#666',
+                                                                    'margin': '0',
+                                                                    'textAlign': 'right',  # 文字右对齐
+                                                                    'width': '200px'
+                                                                }
+                                                            )
+                                                        ]
+                                                    )
+                                                ]
+                                            )
+                                        ]
+                                    )
+                                ]
                             )
                         ],
                         style={
                             'width': '100%',
                             'height': '100%',
-                            'padding': '60px 80px 40px 80px'  # 上下左右内边距
+                            'padding': '30px 80px 100px 80px'  # 调整padding，减少顶部padding使内容上移，增加底部padding为图片留出空间
                         }
+                    ),
+
+                    # 添加四张示例图片容器
+                    html.Div(
+                        style={
+                            'position': 'absolute',
+                            'bottom': '100px',  # 增加bottom值使图片整体向上移动，从20px改为100px
+                            'left': '160px',
+                            'right': '80px',
+                            'display': 'flex',
+                            'justifyContent': 'center',  # 保持居中对齐
+                            'alignItems': 'center',
+                            'zIndex': '7'
+                        },
+                        children=[
+                            # example1.png
+                            html.Div(
+                                style={
+                                    'display': 'flex',
+                                    'flexDirection': 'column',
+                                    'alignItems': 'center',
+                                    'marginRight': '15px'  # 添加右侧margin控制间距
+                                },
+                                children=[
+                                    html.Img(
+                                        src='/assets/imgs/example1.png',
+                                        style={
+                                            'width': '200px',
+                                            'height': '120px',
+                                            'objectFit': 'contain'
+                                        }
+                                    )
+                                ]
+                            ),
+                            # example2.png
+                            html.Div(
+                                style={
+                                    'display': 'flex',
+                                    'flexDirection': 'column',
+                                    'alignItems': 'center',
+                                    'marginRight': '15px'  # 添加右侧margin控制间距
+                                },
+                                children=[
+                                    html.Img(
+                                        src='/assets/imgs/example2.png',
+                                        style={
+                                            'width': '220px',
+                                            'height': '130px',
+                                            'objectFit': 'contain'
+                                        }
+                                    )
+                                ]
+                            ),
+                            # example3.png
+                            html.Div(
+                                style={
+                                    'display': 'flex',
+                                    'flexDirection': 'column',
+                                    'alignItems': 'center',
+                                    'marginRight': '15px'  # 添加右侧margin控制间距
+                                },
+                                children=[
+                                    html.Img(
+                                        src='/assets/imgs/example3.png',
+                                        style={
+                                            'width': '200px',
+                                            'height': '120px',
+                                            'objectFit': 'contain'
+                                        }
+                                    )
+                                ]
+                            ),
+                            # example4.png
+                            html.Div(
+                                style={
+                                    'display': 'flex',
+                                    'flexDirection': 'column',
+                                    'alignItems': 'center'
+                                },
+                                children=[
+                                    html.Img(
+                                        src='/assets/imgs/example4.png',
+                                        style={
+                                            'width': '200px',
+                                            'height': '120px',
+                                            'objectFit': 'contain'
+                                        }
+                                    )
+                                ]
+                            )
+                        ]
                     ),
 
                     # 底部彩色条纹
