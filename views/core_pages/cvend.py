@@ -37,7 +37,16 @@ def render():
                         }
                     ),
                     
-                    # 红色感谢区域 - 约占1/2高度
+                    # 顶部空白区域
+                    html.Div(
+                        style={
+                            'width': '100%',
+                            'height': '150px',  # 控制顶部空白高度
+                            'backgroundColor': 'transparent'  # 透明背景
+                        }
+                    ),
+                    
+                    # 红色感谢区域 - 约占40%高度
                     html.Div(
                         [
                             html.H1(
@@ -56,12 +65,11 @@ def render():
                         style={
                             'backgroundColor': '#e02020',  # 红色背景
                             'width': '100%',
-                            'height': '40%',
+                            'height': 'calc(40% - 50px)',  # 调整高度以适应整体布局
                             'display': 'flex',
                             'flexDirection': 'column',
                             'justifyContent': 'center',
-                            'alignItems': 'center',
-                            'paddingTop': '100px'
+                            'alignItems': 'center'
                         }
                     ),
                     
@@ -80,7 +88,7 @@ def render():
                         ],
                         style={
                             'width': '100%',
-                            'height': '50%',
+                            'height': '50%',  # 保持底部图片区域高度
                             'overflow': 'hidden'
                         }
                     ),
@@ -116,7 +124,8 @@ def render():
             'padding': '40px',  # 添加内边距以显示灰色背景
             'width': '100%',
             'height': '100vh',
-            'backgroundColor': '#f0f0f0',  # 整体页面灰色背景
+            #'backgroundColor': '#f0f0f0',  # 整体页面灰色背景
+            'backgroundColor': '#ffffff',  # 修改为白色背景
             'boxSizing': 'border-box',
             'display': 'flex',
             'alignItems': 'center',
