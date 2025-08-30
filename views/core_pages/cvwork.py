@@ -355,7 +355,7 @@ def render_architecture_section():
                         }
                     ),
                     html.P(
-                        '• 头部企业混合云大数据平台建设；',
+                        '• 头部车企混合云大数据平台建设；',
                         style={
                             'fontFamily': 'Microsoft YaHei',
                             'fontSize': '14px',
@@ -468,7 +468,7 @@ def render_consulting_section():
                         }
                     ),
                     html.P(
-                        '• 头部企业混合云大数据平台建设；',
+                        '• 某矿业央企数字化转型战略咨询；',
                         style={
                             'fontFamily': 'Microsoft YaHei',
                             'fontSize': '14px',
@@ -477,7 +477,7 @@ def render_consulting_section():
                         }
                     ),
                     html.P(
-                        '• 工业互联网平台数据体系建设；',
+                        '• 基建行业数字化园区建设规划；',
                         style={
                             'fontFamily': 'Microsoft YaHei',
                             'fontSize': '14px',
@@ -486,7 +486,7 @@ def render_consulting_section():
                         }
                     ),
                     html.P(
-                        '• 金融行业客户多云平台架构及运维体系设计；',
+                        '• 通讯行业云边协同一体化架构优化和运维体系；',
                         style={
                             'fontFamily': 'Microsoft YaHei',
                             'fontSize': '14px',
@@ -495,7 +495,7 @@ def render_consulting_section():
                         }
                     ),
                     html.P(
-                        '• 多家两地三中心灾备体系设计；',
+                        '• 多家金融客户开源治理咨询；',
                         style={
                             'fontFamily': 'Microsoft YaHei',
                             'fontSize': '14px',
