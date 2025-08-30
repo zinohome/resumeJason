@@ -93,7 +93,7 @@ def render_development_section():
                     # 图标
                     fac.AntdIcon(
                         icon='pi-buildings',
-                        style={'width': '40px', 'height': '40px', 'marginRight': '5px', 'color': '#1890ff'}
+                        style={'width': '20px', 'height': '20px', 'color': '#1890ff'}
                     ),
                     html.H3(
                         '开发',
@@ -101,10 +101,7 @@ def render_development_section():
                             'fontFamily': 'Microsoft YaHei',
                             'fontSize': '18px',
                             'color': '#333',
-                            'margin': '0',
-                            'display': 'flex',
-                            'alignItems': 'center',
-                            'height': '40px'
+                            'margin': '0'
                         }
                     )
                 ]
@@ -219,7 +216,7 @@ def render_maintenance_section():
                     # 图标
                     fac.AntdIcon(
                         icon='pi-buildings',
-                        style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#52c41a'}
+                        style={'width': '20px', 'height': '20px', 'color': '#52c41a'}
                     ),
                     html.H3(
                         '运维',
@@ -332,7 +329,7 @@ def render_architecture_section():
                     # 图标
                     fac.AntdIcon(
                         icon='pi-buildings',
-                        style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#faad14'}
+                        style={'width': '20px', 'height': '20px', 'color': '#faad14'}
                     ),
                     html.H3(
                         '架构',
@@ -445,7 +442,7 @@ def render_consulting_section():
                     # 图标
                     fac.AntdIcon(
                         icon='pi-buildings',
-                        style={'width': '30px', 'height': '30px', 'marginRight': '10px', 'color': '#f5222d'}
+                        style={'width': '20px', 'height': '20px', 'color': '#f5222d'}
                     ),
                     html.H3(
                         '咨询',
