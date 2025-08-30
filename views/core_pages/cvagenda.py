@@ -62,7 +62,6 @@ def render():
                                             'fontSize': '40px',
                                             'fontWeight': 'bold',
                                             'margin': '0',
-                                            'fontFamily': '方正小标宋简体, sans-serif',
                                             'lineHeight': '48px'
                                         }
                                     )
@@ -88,7 +87,6 @@ def render():
                                                     'fontSize': '28px',
                                                     'color': '#333',
                                                     'margin': '0 0 40px 0',
-                                                    'fontFamily': '仿宋_GB2312, serif',
                                                     'textDecoration': 'none'  # 可根据需要保留或去除下划线
                                                 }
                                             ),
@@ -100,7 +98,6 @@ def render():
                                                     'fontSize': '28px',
                                                     'color': '#333',
                                                     'margin': '0 0 40px 0',
-                                                    'fontFamily': '仿宋_GB2312, serif',
                                                     'textDecoration': 'none'
                                                 }
                                             ),
@@ -112,7 +109,6 @@ def render():
                                                     'fontSize': '28px',
                                                     'color': '#333',
                                                     'margin': '0 0 40px 0',
-                                                    'fontFamily': '仿宋_GB2312, serif',
                                                     'textDecoration': 'none'
                                                 }
                                             ),
@@ -124,7 +120,6 @@ def render():
                                                     'fontSize': '28px',
                                                     'color': '#333',
                                                     'margin': '0',
-                                                    'fontFamily': '仿宋_GB2312, serif',
                                                     'textDecoration': 'none'
                                                 }
                                             )

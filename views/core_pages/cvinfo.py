@@ -60,7 +60,6 @@ def render_header():
                             'fontSize': '24px',
                             'fontWeight': 'bold',
                             'margin': '0',
-                            'fontFamily': 'Microsoft YaHei'
                         }
                     )
                 ]
@@ -618,7 +617,6 @@ def render():
                                             'fontSize': '40px',
                                             'fontWeight': 'bold',
                                             'margin': '0',
-                                            'fontFamily': '方正小标宋简体, sans-serif',
                                             'lineHeight': '48px'
                                         }
                                     )

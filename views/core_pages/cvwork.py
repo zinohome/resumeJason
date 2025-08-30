@@ -60,7 +60,6 @@ def render_header():
                             'fontSize': '24px',
                             'fontWeight': 'bold',
                             'margin': '0',
-                            'fontFamily': 'Microsoft YaHei'
                         }
                     )
                 ]
