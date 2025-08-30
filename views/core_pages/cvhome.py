@@ -21,7 +21,7 @@ def render():
                                     'fontSize': '64px',
                                     'fontWeight': 'bold',
                                     'margin': '0',
-                                    'padding': '150px 0 30px 0',
+                                    'padding': '30px 0 30px 0',
                                     'fontFamily': '方正小标宋简体, sans-serif'  # 设置方正小标宋简体字体
                                 }
                             ),
