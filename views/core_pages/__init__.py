@@ -7,7 +7,7 @@ from feffery_dash_utils.style_utils import style
 from components import core_side_menu
 from configs import BaseConfig, RouterConfig, LayoutConfig
 from views.core_pages import independent_page_demo, independent_wildcard_page_demo, cvhome, cvagenda, cvinfo, cvcharact, \
-    cvplan
+    cvplan, cvend  # <-- 增加cvend
 from views.core_pages import cvwork
 
 # 令绑定的回调函数子模块生效
@@ -62,6 +62,8 @@ def render(current_pathname: str = None):
             return cvcharact.render()
         elif current_pathname == "/core/cvplan":
             return cvplan.render()
+        elif current_pathname == "/core/cvend":
+            return cvend.render()  # <-- 增加这一行
 
     # 判断是否需要独立通配渲染
     elif any(

@@ -6,6 +6,7 @@ from dash.dependencies import Input, Output, State, ClientsideFunction
 
 from server import app
 from views.status_pages import _404
+# 在导入部分添加cvend
 from views.core_pages import (
     index,
     page1,
@@ -17,7 +18,7 @@ from views.core_pages import (
     url_params_page,
     cvhome,
     cvagenda,
-    cvinfo, cvwork, cvcharact, cvplan,  # <-- 新增此行
+    cvinfo, cvwork, cvcharact, cvplan, cvend,  # <-- 增加cvend
 )
 
 # 路由配置参数
@@ -184,10 +185,15 @@ def core_router(
         # 更新页面返回内容
         page_content = cvcharact.render()
 
+    # 在页面路由处理逻辑中添加cvend
     # 添加cvplan页面处理逻辑
     elif pathname == "/core/cvplan":
         # 更新页面返回内容
         page_content = cvplan.render()
+    # 添加cvend页面处理逻辑
+    elif pathname == "/core/cvend":
+        # 更新页面返回内容
+        page_content = cvend.render()
 
     # 多标签页形式
     if page_config.get("core_layout_type") == "tabs":

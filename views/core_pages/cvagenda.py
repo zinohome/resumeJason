@@ -132,25 +132,31 @@ def render():
                                         }
                                     ),
                                     
-                                    # 右侧图片区域 - 显示zjlab-stone.png
-                                    html.Div(
-                                        html.Img(
-                                            src='/assets/imgs/zjlab-stone.png',
-                                            style={
-                                                'width': '100%',
-                                                'height': '100%',
-                                                'objectFit': 'contain'  # 保持图片比例
-                                            }
-                                        ),
-                                        style={
-                                            'flex': '1.2',  # 图片区域稍宽
-                                            'height': '400px',
-                                            'overflow': 'hidden',
-                                            'display': 'flex',
-                                            'alignItems': 'center',
-                                            'justifyContent': 'center',
-                                            'marginLeft': '60px'
-                                        }
+                                    # 右侧图片区域 - 显示zjlab-stone.png并添加跳转链接
+                                    html.A(
+                                        href='/core/cvend',
+                                        target='_self',
+                                        children=[
+                                            html.Div(
+                                                html.Img(
+                                                    src='/assets/imgs/zjlab-stone.png',
+                                                    style={
+                                                        'width': '100%',
+                                                        'height': '100%',
+                                                        'objectFit': 'contain'  # 保持图片比例
+                                                    }
+                                                ),
+                                                style={
+                                                    'flex': '1.2',  # 图片区域稍宽
+                                                    'height': '400px',
+                                                    'overflow': 'hidden',
+                                                    'display': 'flex',
+                                                    'alignItems': 'center',
+                                                    'justifyContent': 'center',
+                                                    'marginLeft': '60px'
+                                                }
+                                            )
+                                        ]
                                     )
                                 ],
                                 style={
