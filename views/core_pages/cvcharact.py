@@ -509,6 +509,9 @@ def render():
                                             'width': '200px',
                                             'height': '120px',
                                             'objectFit': 'contain'
+                                        },
+                                        preview={
+                                            'rootClassName': 'image-preview-white-bg'
                                         }
                                     )
                                 ]
@@ -528,6 +531,9 @@ def render():
                                             'width': '220px',
                                             'height': '130px',
                                             'objectFit': 'contain'
+                                        },
+                                        preview={
+                                            'rootClassName': 'image-preview-white-bg'
                                         }
                                     )
                                 ]
@@ -547,6 +553,9 @@ def render():
                                             'width': '200px',
                                             'height': '120px',
                                             'objectFit': 'contain'
+                                        },
+                                        preview={
+                                            'rootClassName': 'image-preview-white-bg'
                                         }
                                     )
                                 ]
@@ -565,6 +574,9 @@ def render():
                                             'width': '200px',
                                             'height': '120px',
                                             'objectFit': 'contain'
+                                        },
+                                        preview={
+                                            'rootClassName': 'image-preview-white-bg'
                                         }
                                     )
                                     

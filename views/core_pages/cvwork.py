@@ -168,8 +168,7 @@ def render_development_section():
             # 图片区域
             html.Div(
                 children=[
-                    html.Img(
-                        src='/assets/imgs/develop1.png',
+                    fac.AntdImage(src='/assets/imgs/develop1.png',
                         style={
                             'width': '100%',
                             'height': 'auto',
@@ -177,12 +176,11 @@ def render_development_section():
                             'border': '1px solid #ddd'
                         }
                     ),
-                    # 注意：develop2可能是一个文件夹，这里使用占位图
-                    html.Img(
-                        src='/assets/imgs/develop2.png',
+                    fac.AntdImage(src='/assets/imgs/develop2.png',
                         style={
                             'width': '100%',
                             'height': 'auto',
+                            'marginBottom': '10px',
                             'border': '1px solid #ddd'
                         }
                     )
@@ -282,21 +280,25 @@ def render_maintenance_section():
             # 图片区域
             html.Div(
                 children=[
-                    html.Img(
-                        src='/assets/imgs/maintenance1.png',
+                    fac.AntdImage(src='/assets/imgs/maintenance3.png',
                         style={
                             'width': '100%',
                             'height': 'auto',
-                            'marginBottom': '10px',
                             'border': '1px solid #ddd'
+                        },
+                        preview={
+                            'rootClassName': 'image-preview-white-bg'
                         }
                     ),
-                    html.Img(
+                    fac.AntdImage(
                         src='/assets/imgs/maintenance2.png',
                         style={
                             'width': '100%',
                             'height': 'auto',
                             'border': '1px solid #ddd'
+                        },
+                        preview={
+                            'rootClassName': 'image-preview-white-bg'
                         }
                     )
                 ]
@@ -395,21 +397,24 @@ def render_architecture_section():
             # 图片区域
             html.Div(
                 children=[
-                    html.Img(
-                        src='/assets/imgs/architect1.png',
+                    fac.AntdImage(src='/assets/imgs/architect1.png',
                         style={
                             'width': '100%',
                             'height': 'auto',
-                            'marginBottom': '10px',
                             'border': '1px solid #ddd'
+                        },
+                        preview={
+                            'rootClassName': 'image-preview-white-bg'
                         }
                     ),
-                    html.Img(
-                        src='/assets/imgs/architect2.png',
+                    fac.AntdImage(src='/assets/imgs/architect2.png',
                         style={
                             'width': '100%',
                             'height': 'auto',
                             'border': '1px solid #ddd'
+                        },
+                        preview={
+                            'rootClassName': 'image-preview-white-bg'
                         }
                     )
                 ]
@@ -508,21 +513,24 @@ def render_consulting_section():
             # 图片区域
             html.Div(
                 children=[
-                    html.Img(
-                        src='/assets/imgs/consultant1.png',
+                    fac.AntdImage(src='/assets/imgs/consultant1.png',
                         style={
                             'width': '100%',
                             'height': 'auto',
-                            'marginBottom': '10px',
                             'border': '1px solid #ddd'
+                        },
+                        preview={
+                            'rootClassName': 'image-preview-white-bg'
                         }
                     ),
-                    html.Img(
-                        src='/assets/imgs/consultant2.png',
+                    fac.AntdImage(src='/assets/imgs/consultant2.png',
                         style={
                             'width': '100%',
                             'height': 'auto',
                             'border': '1px solid #ddd'
+                        },
+                        preview={
+                            'rootClassName': 'image-preview-white-bg'
                         }
                     )
                 ]

@@ -161,6 +161,9 @@ def render():
                                                             'height': 'auto',
                                                             'objectFit': 'contain',
                                                             'maxHeight': '380px'  # 增加最大高度使图片更大
+                                                        },
+                                                        preview={
+                                                            'rootClassName': 'image-preview-white-bg'
                                                         }
                                                     )
                                                 ]
@@ -218,6 +221,9 @@ def render():
                                                             'height': 'auto',
                                                             'objectFit': 'contain',
                                                             'maxHeight': '380px'  # 增加最大高度使图片更大
+                                                        },
+                                                        preview={
+                                                            'rootClassName': 'image-preview-white-bg'
                                                         }
                                                     )
                                                 ]
@@ -275,6 +281,9 @@ def render():
                                                             'height': 'auto',
                                                             'objectFit': 'contain',
                                                             'maxHeight': '380px'  # 增加最大高度使图片更大
+                                                        },
+                                                        preview={
+                                                            'rootClassName': 'image-preview-white-bg'
                                                         }
                                                     )
                                                 ]

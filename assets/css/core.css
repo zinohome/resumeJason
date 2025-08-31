@@ -36,3 +36,19 @@
 #core-side-menu .ant-menu-inline {
     background: none !important;
 }
+
+/* 只为图片区域设置白色背景，保持预览层背景不变 */
+.image-preview-white-bg .ant-image-preview-img {
+    background-color: white !important;
+    padding: 20px; /* 可选：为图片周围添加一些白色内边距 */
+}
+
+/* 确保图片预览的容器也有适当的背景 */
+.image-preview-white-bg .ant-image-preview-img-wrapper {
+    background-color: transparent !important;
+}
+
+/* 保持预览层的背景半透明黑色 */
+.image-preview-white-bg.ant-image-preview-root {
+    background-color: rgba(0, 0, 0, 0.45) !important;
+}
