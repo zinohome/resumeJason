@@ -154,7 +154,7 @@ def render():
                                                         ]
                                                     ),
                                                     # 近期图片（较大尺寸）
-                                                    html.Img(
+                                                    fac.AntdImage(
                                                         src='/assets/imgs/plan_short.png',
                                                         style={
                                                             'width': '100%',
@@ -211,7 +211,7 @@ def render():
                                                         ]
                                                     ),
                                                     # 中期图片（较大尺寸）
-                                                    html.Img(
+                                                    fac.AntdImage(
                                                         src='/assets/imgs/plan_middle.png',
                                                         style={
                                                             'width': '100%',
@@ -268,7 +268,7 @@ def render():
                                                         ]
                                                     ),
                                                     # 长期图片（较大尺寸）
-                                                    html.Img(
+                                                    fac.AntdImage(
                                                         src='/assets/imgs/plan_long.png',
                                                         style={
                                                             'width': '100%',
@@ -303,6 +303,67 @@ def render():
                             'width': '100%',
                             'height': '8px',
                             'background': 'linear-gradient(90deg, #1a365d 0%, #1a365d 11.1%, #1a365d 11.1%, #1a465d 22.2%, #1a565d 22.2%, #1a565d 33.3%, #1a665d 33.3%, #1a665d 44.4%, #1a765d 44.4%, #1a765d 55.5%, #1a865d 55.5%, #1a865d 66.6%, #1a965d 66.6%, #1a965d 77.7%, #1aa65d 77.7%, #1aa65d 100%)'
+                        }
+                    ),
+                    
+                    # 右下角图标组
+                    html.Div(
+                        [
+                            # 左侧箭头图标 - 添加链接指向/core/cvcharact
+                            html.A(
+                                href='/core/cvcharact',
+                                target='_self',
+                                children=[
+                                    fac.AntdIcon(
+                                        icon='antd-caret-left',
+                                        style={
+                                            'fontSize': '32px',
+                                            'color': '#666',
+                                            'marginRight': '10px',
+                                            'cursor': 'pointer'
+                                        }
+                                    )
+                                ]
+                            ),
+                            # 目录图标 - 链接指向/core/cvagenda
+                            html.A(
+                                href='/core/cvagenda',
+                                target='_self',
+                                children=[
+                                    fac.AntdIcon(
+                                        icon='antd-menu',
+                                        style={
+                                            'fontSize': '32px',
+                                            'color': '#666',
+                                            'marginRight': '10px',
+                                            'cursor': 'pointer'
+                                        }
+                                    )
+                                ]
+                            ),
+                            # 右侧箭头图标 - 添加链接指向/core/cvend
+                            html.A(
+                                href='/core/cvend',
+                                target='_self',
+                                children=[
+                                    fac.AntdIcon(
+                                        icon='antd-caret-right',
+                                        style={
+                                            'fontSize': '32px',
+                                            'color': '#666',
+                                            'cursor': 'pointer'
+                                        }
+                                    )
+                                ]
+                            )
+                        ],
+                        style={
+                            'position': 'absolute',
+                            'bottom': '20px',
+                            'right': '40px',
+                            'zIndex': '20',
+                            'display': 'flex',
+                            'alignItems': 'center'
                         }
                     )
                 ],
